@@ -1,0 +1,96 @@
+//@import fonts.css
+@import _framework.sass
+@import _responsive.sass
+@import _variables.sass
+@import mixins/_mixins.sass
+@import mixins/_retina_sprites.sass
+@import url('https://fonts.googleapis.com/css?family=Merriweather')
+
+a
+    text-decoration: none
+
+
+body
+    font-family: $ffM-s
+    background-color: $black
+    line-height: 1.3em
+    font-size: 14px
+
+.header-nav
+    display: flex
+    justify-content: space-between
+
+header > .container
+    max-width: 1170px
+    margin: 0 auto
+
+.content > .container
+    max-width: 1200px
+    margin: 0 auto
+
+.header-nav-item
+    text-decoration: none
+    color: $beige //erghergh
+    font-size: 14px
+    padding: 10px 25px 10px 25px
+    &:hover
+        +trans()
+        color : $black
+        background-color: $beige
+
+.logo
+    +retina-bg("logo.png", "logo@2x.png")
+    background-repeat: no-repeat
+    background-position: center center
+    min-height: 150px
+
+
+.logo-wrapper
+    margin: 0 auto
+    max-width: 500px
+//______________________text______________
+.page-title-text
+    line-height: 1.3em
+    letter-spacing: 0.15em //herh2
+
+.fz-large
+    font-size: 30px
+
+.fz-base
+    font-size: 18px
+
+.fz-small
+    font-size: 14px
+//______________________endtext______________
+
+.header-title
+    letter-spacing: 0.2em
+
+.small-sep
+    display: block
+    position: relative
+    border-bottom: 1px solid $darkergrey
+    width: 59px
+    margin: 0 auto
+    margin-top: 34px
+    margin-bottom: 43px
+    &:before
+        content: ''
+        position: absolute
+        right: calc(50% - 3px)
+        width: 6px
+        height: 6px
+        bottom: calc(100% - 3px)
+        transform: rotate(45deg)
+        background-color: $darkergrey
+
+
+.banners-item
+    background-color: $darkerblack
+    margin-bottom: 20px
+
+.banners-link
+    color: $beige
+    margin-bottom: 5px
+    &:hover
+        color: $orange

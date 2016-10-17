@@ -1,3 +1,24 @@
 {% extends "layouts/main.twig" %}
 {% block pageContent %}
+    <div class="content">
+        <div class="container">
+            <div class="home-title-block tac">
+                <span class="mb50 fz-large page-title-text white">We proudly serve the renowned wine <br>
+                    and local organic food
+                </span>
+                <p class="page-title-text grey fz-base">We introduce new cultures to visitors through cuisines of various countries, <br> offering a special dish for everyone regardless of their <br> food preferences.
+                </p>
+            </div>
+            <span class="small-sep"></span>
+            <div class="whats-for-dinner">
+                <div class="banner">
+                    <p class="fz-large">See what's <br>
+                        for dinner
+                    </p>
+                </div>
+            </div>
+            {% include "layouts/banners.twig" %}
+
+        </div>
+    </div>
 {% endblock %}
