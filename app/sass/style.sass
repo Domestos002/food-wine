@@ -20,11 +20,7 @@ body
     display: flex
     justify-content: space-between
 
-header > .container
-    max-width: 1170px
-    margin: 0 auto
-
-.content > .container
+.container
     max-width: 1200px
     margin: 0 auto
 
@@ -61,6 +57,11 @@ header > .container
 
 .fz-small
     font-size: 14px
+
+.small-text-block > p
+    margin-bottom: 30px
+    &:last-child
+        margin-bottom: 0
 //______________________endtext______________
 
 .header-title
@@ -88,9 +89,80 @@ header > .container
 .banners-item
     background-color: $darkerblack
     margin-bottom: 20px
+    padding-bottom: 30px
+    position: relative
+
+.designers-things
+    display: flex
+    justify-content: space-between
+    &:before
+        display: inline-block
+        height: 2px
+        vertical-align: top
+        width: 50%
+        content: ''
+        border-bottom: 3px solid $beige
+    &:after
+        display: inline-block
+        height: 2px
+        vertical-align: top
+        width: 50%
+        content: ''
+        border-bottom: 3px solid $beige
 
 .banners-link
     color: $beige
     margin-bottom: 5px
     &:hover
         color: $orange
+
+.arrow-down
+    width: 60px
+    margin: 0 auto
+    height: 30px
+    display: flex
+    &:before
+        content: ''
+        margin: auto
+        display: inline-block
+        width: 10px
+        height: 10px
+        background: transparent
+        transform: rotate(45deg)
+        border-bottom: 3px solid $beige
+        border-right: 3px solid $beige
+
+.arrow-down-wrapper
+    width: 60px
+    margin: 0 auto
+    
+.our-menu-item
+    background-color: $darkerblack
+
+.img
+    width: 100%
+
+.img-wrapper
+    width: 100%
+
+.our-menu-item-inner
+    padding-left: 30px
+    padding-right: 30px
+    padding-bottom: 75px
+
+.shapes
+    max-width: 750px
+    margin:  0 auto 80px auto //gh
+
+.shapes-item
+    &:before
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        position: absolute
+        width: 100px
+        height: 100px
+        transform: rotate(45deg)
+        border: 1px solid rgba(255, 255, 255, 0.3)
+.shapes-item-content
+    z-index: 10

@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     htmlbeautify = require('gulp-html-beautify'),
     callback = require('gulp-callback'),
     plumber = require('gulp-plumber'),
+    browserSync  = require('browser-sync'),
     connect = require('gulp-connect');
 
 /* SOURCES --------------------------------------------------------------------
@@ -55,7 +56,7 @@ gulp.task('pug', function () {
             pretty: true
         }))
         .pipe(gulp.dest(sources.pug.dist))
-        .pipe(connect.reload());
+        .pipe(browserSync.reload({stream: true}));
 });
 
 
@@ -76,7 +77,7 @@ gulp.task('twig', function () {
                 //     }, 2000);
                 // }));
         }))
-        .pipe(connect.reload());
+        .pipe(browserSync.reload({stream: true}));
 
 
     // return null;
@@ -93,7 +94,7 @@ gulp.task('compass', function () {
             image: sources.sass.image_dist
         }))
         .pipe(gulp.dest(sources.css.dist))
-        .pipe(connect.reload());
+        .pipe(browserSync.reload({stream: true}));
 });
 
 /* BOWER --------------------------------------------------------------------- */
@@ -111,6 +112,12 @@ gulp.task('connect', function () {
         root: 'app',
         port: 3000,
         livereload: true
+    });
+});
+/* BROWSER SYNC -------------------------------------------------------------- */
+gulp.task('browser-sync', function () {
+    browserSync.init({
+        server: "./app"
     });
 });
 
