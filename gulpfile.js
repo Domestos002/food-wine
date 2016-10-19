@@ -43,7 +43,10 @@ var sources = {
         image_dist: 'app/img',
         relative: true
     },
-    bower: {src: 'app/bower_components'}
+    bower: {src: 'app/bower_components'},
+    images: {
+        dist: 'app/img'
+    }
 };
 
 /* DEVELOPMENT GULP TASKS ------------------------------------------------------
@@ -70,14 +73,16 @@ gulp.task('twig', function () {
             gulp.src(sources.twig.temp_dist_html)
                 .pipe(htmlbeautify())
                 .pipe(gulp.dest(sources.html.dist))
+                .pipe(browserSync.reload({stream: true}));
                 // .pipe(callback(function () {
                 //     setTimeout(function () {
                 //         gulp.src(sources.twig.temp_dist, {read: false})
                 //             .pipe(clean());
                 //     }, 2000);
                 // }));
-        }))
-        .pipe(browserSync.reload({stream: true}));
+        }));
+
+
 
 
     // return null;
@@ -173,11 +178,9 @@ gulp.task('watch', function () {
     gulp.watch(sources.sass.watch, ['compass']);
     // gulp.watch(sources.pug.watch, ["pug"]);
     gulp.watch(sources.twig.watch, ["twig"]);
-
-    // function swallowError(error) {
-    //     console.log(error.toString());
-    //     this.emit('end');
-    // }
+    gulp.watch(sources.images.dist, ["compass"]);
+    gulp.watch(sources.js.watch).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['connect', 'twig', 'compass', 'watch']);
+
+gulp.task('default', ['browser-sync', 'twig', 'compass', 'watch']);

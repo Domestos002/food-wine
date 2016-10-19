@@ -1,6 +1,12 @@
 @import _variables.sass
 @import mixins/_retina_sprites.sass
 
+.clearfix
+    &:after
+        clear: both
+        display: block
+        content: ''
+
 .ttu
     text-transform: uppercase
 
@@ -19,6 +25,20 @@
 .ai-c
     align-items: center
 
+.fl-baseline
+    display: flex
+    align-items: baseline
+    justify-content: center
+
+.fl-start
+    display: flex
+    justify-content: flex-start
+
+.fl-end
+    align-items: flex-end
+
+.p-rel
+    position: relative
 .fl-center
     display: flex
     align-items: center
@@ -27,6 +47,9 @@
 .fl-grid
     display: flex
     justify-content: space-between
+
+.fl-start
+    justify-content: flex-start
 
 .m-auto
     margin: auto
@@ -47,6 +70,9 @@
     color: $grey
 .beige
     color: $beige
+
+.ffMS
+    font-family: $ffM-s
 //______________________________________ENDТекста и цвета____________________
 
 .fz18
@@ -58,11 +84,35 @@
 .mb43
     margin-bottom: 43px
 
+.mb5
+    margin-bottom: 5px
+
+.ml20
+    margin-left: 20px
+
+.mr20
+    margin-right: 20px
+
+.mb35
+    margin-bottom: 35px
+
+.mr25
+    margin-right: 25px
+
 .mb45
     margin-bottom: 45px
 
 .mb20
     margin-bottom: 20px
+
+.mt50
+    margin-top: 50px
+
+.mb30
+    margin-bottom: 30px
+
+.mb150
+    margin-bottom: 150px
 
 .mb50
     margin-bottom: 50px
@@ -76,15 +126,11 @@
 .mb100
     margin-bottom: 100px
 //_______________________
+.col-12
+    flex-basis: 100%
 
-.col-6
-    flex-basis: calc(50% - 15px)
-
-.col-3
-    flex-basis: calc(33.3% - 19px) //rgr
-
-.cell-3
-    flex-basis: 33.3%
+//.grey-line
+    border-top: 1px solid $darkestgrey
 
 .gutter70
     margin-left: -15px
@@ -100,3 +146,6 @@
     background-repeat: no-repeat
     padding-top: 75px
     padding-bottom: 75px
+
+.hidden
+    display: none

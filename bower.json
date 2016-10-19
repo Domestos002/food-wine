@@ -9,5 +9,9 @@
     "owl.carousel": "2",
     "uikit": "^2.27.1",
     "reset-css": "^2.2.0"
+  },
+  "devDependencies": {
+    "viscompass": "compass#^0.7.1",
+    "owl.carousel": "^2.1.6"
   }
 }
