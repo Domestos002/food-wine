@@ -92,6 +92,10 @@
   color: #e0ca8f;
 }
 
+.black {
+  color: #1d1d1d;
+}
+
 .ffMS {
   font-family: "Merriweather Sans", sans-serif;
 }
@@ -250,6 +254,12 @@ body {
   margin-top: 10px;
 }
 
+.header-nav-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #1d1d1d;
+}
+
 .header-nav__dd {
   position: absolute;
   top: 100%;
@@ -267,6 +277,7 @@ body {
 
 .header-nav__dd-link {
   text-align: center;
+  display: inline-block;
   text-decoration: none;
   letter-spacing: 0.19em;
   color: #1d1d1d;
@@ -614,7 +625,7 @@ button.link-v1 {
 }
 
 .first-screen, .first-screen-slider {
-  height: calc(100vh - 360px);
+  height: calc(100vh - 220px);
 }
 
 #button-up {
@@ -818,6 +829,10 @@ button.link-v1 {
   transform: translate(-50%, -50%);
   margin-top: -95px;
   z-index: 10;
+}
+
+.first-screen .owl-stage-outer {
+  height: 100%;
 }
 
 .whats-for-dinner .allocation-sep {
@@ -1108,4 +1123,23 @@ footer .logo__title {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   -ms-transition: all 0.3s ease 0s;
+}
+
+.breadcrums-block {
+  min-height: 405px;
+  background-image: url("http://placehold.it/1000x405");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.breadcrums-block .allocation-link {
+  width: 80%;
+}
+
+.breadcrum:hover {
+  color: #e0ca8f;
+}
+.breadcrum:last-child:hover {
+  color: #1d1d1d;
 }

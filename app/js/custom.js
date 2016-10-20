@@ -14,9 +14,20 @@
         var logo =  document.getElementById("logo");
         if ($(window).scrollTop() > $(logo).outerHeight()) {
             $(header).addClass('fixed');
+            $(header).css({"width" : "100%" });
+            $(header).find('.header-nav').css({"width" : "1200px" });
+            $(header).find('.header-nav').css({"padding" : "0" });
+            $(header).find('.header-nav').css({"padding-top" : "10px" });
+            $(header).find('.header-nav').css({"padding-bottom" : "10px" });
+            (header).css({"padding" : "0" });
         }
         else{
             $(header).removeClass('fixed');
+            $(header).css({"width" : "1200px" });
+            $(header).find('.header-nav').css({"width" : "100%" });
+            $(header).find('.header-nav').css({"padding" : "0" });
+            $(header).find('.header-nav').css({"padding-bottom" : "20px" });
+            $(header).css({"padding" : "0" });
         }
     };
     $(document).ready(function () {
