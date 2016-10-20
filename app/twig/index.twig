@@ -2,15 +2,17 @@
 {% block pageContent %}
     <div class="content">
         <div class="first-screen mb150 p-rel clearfix">
-            <div class="first-screen-content fl-grid fl-center">
-                            <div class="allocation-link fl-grid mb100">
-                                <span class="allocation-sep"></span>
-                                <p class="page-title-text fz-large ml20 mr20 ttu">food&nbsp;&&nbsp;wine</p><span
-                                        class="allocation-sep"></span>
 
-                            </div>
-                            <p class="page-text-title first-screen-content-label white fz-base tac">THE BEST PLACE FOR ANY WINE LOVER TO RELAX AND
-                                UNWIND WHILE ENJOYING A GREAT FOOD.</p>
+            <div class="first-screen-content fl-grid fl-center">
+                <div class="allocation-link fl-grid mb100">
+                    <span class="allocation-sep"></span>
+                    <p class="page-title-text fz-large ml20 mr20 ttu">food&nbsp;&&nbsp;wine</p><span
+                            class="allocation-sep"></span>
+
+                </div>
+                <p class="page-text-title first-screen-content-label white fz-base tac">THE BEST PLACE FOR ANY WINE
+                    LOVER TO RELAX AND
+                    UNWIND WHILE ENJOYING A GREAT FOOD.</p>
             </div>
             <div class="first-screen-shape fl-center">
                 <div class="first-screen-shape__content tac">
@@ -50,8 +52,8 @@
             </div>
             <span class="small-sep"></span>
             <div class="col-12">
-                <div class="whats-for-dinner mb50 p-rel">
-                    <a href="#"><img class="img" src="../img/dinner.jpg" alt=""></a>
+                <a href="#" class=" db whats-for-dinner mb50 p-rel">
+                    <div href="#"><img class="img" src="../img/dinner.jpg" alt=""></div>
                     <div class="whats-for-dinner__banner fl-center">
                         <div class="whats-for-dinner__banner__inner  fl-grid">
                             <span class="allocation-sep end "></span>
@@ -59,7 +61,7 @@
                             <span class="allocation-sep begin"></span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% include "layouts/banners.twig" %}
             <span class="small-sep"></span>
@@ -139,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <div class="index-image-block">
+        <div class="index-image-block mb100">
             <div class="container">
                 <p class="page-title fz-large white tac mb80">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Aliquam at aut blanditiis cupiditate distinctio e</p>
@@ -300,4 +302,5 @@
             </div>
         </div>
     </div>
+    <a id="button-up" class="js-scrollScreen" href="#logo"></a>
 {% endblock %}

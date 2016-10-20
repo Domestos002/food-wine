@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <div class="logo-wrapper">
+        <div class="logo-wrapper " id="logo" >
             <div class="logo tac fl-center">
                 <div class="logo__title">
                     <p class="header-title ttu fz-large tac white m-auto fw700 mb15">food & wine</p>
@@ -17,15 +17,25 @@
         {#    <li class="header-nav-item__dd__link ttu">BLog</li>#}
         {#    <li class="header-nav-item__dd__link ttu">BLog</li>#}
         {#</ul>#}
-        <nav class="header-nav p-rel">
-            <a href="#" class="header-nav-item p-rel ttu">HOME</a>
-            <a href="#" class="header-nav-item p-rel ttu">Wine menu</a>
-            <a href="#" class="header-nav-item p-rel ttu">food menu</a>
-            <a href="#" class="header-nav-item p-rel ttu">specials</a>
-            <a href="#" class="header-nav-item p-rel ttu">pages</a>
-            <a href="#" class="header-nav-item p-rel ttu">gallery</a>
-            <a href="#" class="header-nav-item p-rel dd ttu">blog</a>
-            <a href="#" class="header-nav-item ttu">contact us</a>
-        </nav>
     </div>
+        <ul class="header-nav p-rel" id="header-nav">
+            <li class="header-nav-item"><a href="#" class="header-nav-link p-rel ttu">HOME</a></li>
+            <li class="header-nav-item"><a href="#" class="header-nav-link p-rel ttu">Wine menu</a></li>
+            <li class="header-nav-item"><a href="#" class="header-nav-link p-rel ttu">food menu</a></li>
+            <li class="header-nav-item"><a href="#" class="header-nav-link p-rel ttu">specials</a></li>
+            <li class="header-nav-item"><a href="#" class="header-nav-link p-rel ttu">pages</a></li>
+            <li class="header-nav-item"><a href="#" class="header-nav-link p-rel ttu">gallery</a></li>
+            <li class="header-nav-item dd p-rel">
+                <a href="#" class="header-nav-link p-rel  ttu">blog</a>
+                <ul class="header-nav__dd">
+                    <li class="header-nav__dd-item"><a href="#" class="header-nav__dd-link">dd-text</a></li>
+                    <li class="header-nav__dd-item"><a href="#" class="header-nav__dd-link">dd-text</a></li>
+                    <li class="header-nav__dd-item"><a href="#" class="header-nav__dd-link">dd-text</a></li>
+                    <li class="header-nav__dd-item"><a href="#" class="header-nav__dd-link">dd-text</a></li>
+                    <li class="header-nav__dd-item"><a href="#" class="header-nav__dd-link">dd-text</a></li>
+                </ul>
+            </li>
+            <li class="header-nav-item"><a href="#" class="header-nav-link ttu">contact us</a></li>
+        </ul>
+
 </header>

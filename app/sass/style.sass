@@ -22,6 +22,9 @@ body
     font-size: 14px
 
 .header-nav
+    width: 100%
+    margin: 0 auto
+    background-color: $black
     display: flex
     justify-content: space-between
     padding-bottom: 20px
@@ -35,11 +38,52 @@ body
     -moz-box-sizing: border-box
     box-sizing: border-box
 
+.fixed
+    border-bottom: 1px solid $grey
+    position: fixed
+    top: 0
+    z-index: 700
+    padding-bottom: 10px
+    padding-top: 10px
+
 .header-nav-item
-    letter-spacing: 0.19em
+    display: flex
     flex-grow: 1
     margin-left: 3px
     margin-right: 3px
+    &:hover > .header-nav__dd
+        +trans()
+        display: block
+        margin-top: 10px
+
+.header-nav__dd
+    +position(absolute, 100% none none 0)
+    margin-top: 60px
+    z-index: 600
+    width: 300px
+    background-color: $beige
+    display: none
+
+
+
+.header-nav__dd-item
+    text-align: center
+
+.header-nav__dd-link
+    text-align: center
+    text-decoration: none
+    letter-spacing: 0.19em
+    color: $black
+    font-size: 14px
+    padding: 10px 25px 10px 25px
+    &:hover
+        +trans()
+        color : $beige
+        background-color: $black
+
+.header-nav-link
+    letter-spacing: 0.19em
+    width: 100%
     text-align: center
     text-decoration: none
     color: $beige //erghergh
@@ -313,6 +357,30 @@ button.link-v1
         height: 200px
         transform: rotate(45deg)
         border: 1px solid rgba(255, 255, 255, 0.3)
+
+.first-screen, .first-screen-slider
+    height: calc(100vh - 360px)
+
+#button-up
+    display: none
+    cursor: pointer
+    height: 50px
+    width: 50px
+    bottom: 40px
+    right: 40px
+    border-radius: 50%
+    background-color: $beige
+    position: fixed
+    &:hover
+        background-color: $beige*0.8
+    &:before
+        +position(absolute, calc(50% - 5px) none none calc(50% - 6px))
+        +transform(translateX(50%))
+        +arr(10px, 3px, t, $orange)
+
+.logo-wrapper
+    min-height: 160px
+
 .image-wrapper
     width: 100%
     height: 100%
@@ -482,7 +550,7 @@ button.link-v1
         border: 1px solid $darkestgrey
         
 .footer__textarea-wrapper
-    width: 100
+    width: 100%
     height: 100px
     & > textarea
         +size(100% 100px)
