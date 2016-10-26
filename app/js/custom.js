@@ -31,10 +31,6 @@
         }
     };
 
-    var makeHidden = function () {
-        $('.header-nav-item.dd').find('.header-nav__dd').css({"display": "none"});
-    };
-
     $(document).ready(function () {
         var timeOut;
         var item;
@@ -46,24 +42,42 @@
                 $('.header-nav-item.dd').find('.header-nav__dd').animate({
                     marginTop: "10px",
                     opacity: "1"
-                }, 200 );
+                }, 200);
                 $(this).find('.header-nav__dd').css({"display": "block"});
                 clearTimeout(timeOut);
             },
             function () {
                 last = $(this).find('.header-nav__dd');
-                timeOut = setTimeout(function(){
+                timeOut = setTimeout(function () {
                     $('.header-nav-item.dd').find('.header-nav__dd').animate({
                         marginTop: "60px",
                         opacity: "0",
                         visible: "hidden"
-                    }, 200,function(){
+                    }, 200, function () {
                         $(this).find('.header-nav__dd').css({"display": "none"});
-                    } );
+                    });
                 }, 1000);
             }
         );
 
+        $(document).on("click", '.accordeon-title', function (e) {
+            var this_accordeon = $(this).closest(".accordeon");
+            var this_item = $(this).closest('.accordeon-item');
+            $(this).find('.plus-icon').toggleClass('active');
+
+            if (this_item.hasClass('active') === true) {
+                this_accordeon.find(".accordeon-item__content").stop().slideUp(400);
+                this_accordeon.find('.accordeon-item').removeClass('active');
+            }
+            else {
+                this_item.addClass('active');
+                this_accordeon.find(".accordeon-item__content").stop().slideUp(400);
+                console.log('eth');
+                $(this).closest('.accordeon-item').find('.accordeon-item__content').stop().slideDown(400);
+            }
+
+            e.preventDefault();
+        });
 
         showButton();
         stickyHeader();
@@ -71,7 +85,7 @@
             showButton();
         });
         $(document).scroll(function () {
-            stickyHeader(); 
+            stickyHeader();
         });
 
         /*$('.dd').mousemove(function (e) {
@@ -84,7 +98,7 @@
          var Yinner = e.pageY - elem_top;
          console.log("X: " + Xinner + " Y: " + Yinner); // вывод результата в консоль
          });*/
-        
+
     });
     $(function () {
         $('a.js-scrollScreen[href*="#"]:not([href="#"])').click(function () {

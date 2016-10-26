@@ -1,25 +1,26 @@
-//@import fonts.css
+@import _imports.sass
 @import _framework.sass
 @import _responsive.sass
-@import _variables.sass
-@import mixins/_mixins.sass
-@import mixins/_retina_sprites.sass
-@import url('https://fonts.googleapis.com/css?family=Merriweather')
-@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans')
-
-//________________________
-@import ../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss
 //____________________
 
 a
     text-decoration: none
-
 
 body
     line-height: 1.42857
     font-family: $ffM
     background-color: $black
     font-size: 14px
+
+input
+    width: 100%
+    height: 100%
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    background-color: inherit
+    padding: 5px 15px
+    border: 1px solid #333
 
 .header-nav
     width: 100%
@@ -47,15 +48,18 @@ body
     padding-bottom: 10px
     padding-top: 10px
 
-
 .header-nav-item
     display: flex
     flex-grow: 1
     margin-left: 3px
     margin-right: 3px
+    border-right: 1px solid $darkestgrey
+    &:last-child
+        border-right: none
 
 .header-nav-wrapper
-    width: 1200px //ge
+    width: 1200px
+    //ge
     margin: 0 auto
     background-color: $black
 
@@ -67,8 +71,6 @@ body
     background-color: $beige
     display: none
     opacity: 0
-
-
 
 .header-nav__dd-item
     text-align: center
@@ -85,19 +87,20 @@ body
     padding: 10px 0 10px 0
     &:hover
         +trans()
-        color : $grey
+        color: $grey
 
 .header-nav-link
     letter-spacing: 0.19em
     width: 100%
     text-align: center
     text-decoration: none
-    color: $beige //erghergh
+    color: $beige
+    //erghergh
     font-size: 14px
     padding: 10px 25px 10px 25px
     &:hover
         +trans()
-        color : $black
+        color: $black
         background-color: $beige
 
 .logo
@@ -105,7 +108,6 @@ body
     background-repeat: no-repeat
     background-position: center center
     min-height: 150px
-
 
 .logo-wrapper
     margin: 0 auto
@@ -118,30 +120,43 @@ button.link-v1
 
 //______________________text______________
 .link-v1
-
     @extend .page-title-text
     color: $beige
     &:hover
         color: $grey
 
 .link-v2
-    @extend .page-title-text
     color: #fff
     &:hover
         color: $beige
 
 .link-v3
-    @extend .page-title-text
+    letter-spacing: 0.1px
+    font-family: $ffM-s
     color: $grey
+    &.no-hover
+        &:hover
+            color: $grey
     &.hover
         &:hover
             text-decoration: underline
     &:hover
         color: $beige
 
+.link-v4
+    color: $beige
+    &:hover
+        color: $orange
+
+.link-v5
+    color: $grey
+    &:hover
+        color: $beige
+
 .page-title-text
     line-height: 1.3em
-    letter-spacing: 0.15em //herh2
+    letter-spacing: 0.15em
+//herh2
 
 .fz-large
     font-size: 30px
@@ -179,7 +194,6 @@ button.link-v1
         transform: rotate(45deg)
         background-color: $darkergrey
 
-
 .allocation-sep
     display: block
     position: relative
@@ -207,7 +221,6 @@ button.link-v1
         bottom: calc(100% - 3px)
         transform: rotate(45deg)
         background-color: $darkergrey
-
 
 .banners-item
     background-color: $darkerblack
@@ -258,7 +271,7 @@ button.link-v1
 .arrow-down-wrapper
     width: 60px
     margin: 0 auto
-    
+
 .our-menu-item
     background-color: $darkerblack
 
@@ -275,7 +288,8 @@ button.link-v1
 
 .shapes
     max-width: 750px
-    margin:  0 auto 80px auto //gh
+    margin: 0 auto 80px auto
+//gh
 
 .shapes-item
     &:before
@@ -324,7 +338,6 @@ button.link-v1
     width: 24px
     height: 24px
 
-
 .whats-for-dinner__banner
     @include position(absolute, 50% 50%)
 
@@ -352,17 +365,17 @@ button.link-v1
         transform: rotate(45deg)
         border: 1px solid rgba(255, 255, 255, 0.3)
 
-    //&:before
-        content: ''
-        display: inline-block
-        vertical-align: middle
-        position: absolute
-        right: calc(50% - 100px)
-        top: calc(50% - 100px)
-        width: 200px
-        height: 200px
-        transform: rotate(45deg)
-        border: 1px solid rgba(255, 255, 255, 0.3)
+//&:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    position: absolute
+    right: calc(50% - 100px)
+    top: calc(50% - 100px)
+    width: 200px
+    height: 200px
+    transform: rotate(45deg)
+    border: 1px solid rgba(255, 255, 255, 0.3)
 
 .first-screen, .first-screen-slider
     height: calc(100vh - 220px)
@@ -388,8 +401,20 @@ button.link-v1
     min-height: 160px
 
 .image-wrapper
-    width: 100%
-    height: 100%
+    +size(none 100%)
+    &.overlay
+        position: relative
+        &:hover
+            &:before
+                z-index: 400
+                position: absolute
+                top: 0
+                right: 0
+                width: 100%
+                height: 100%
+                background: rgba(0 ,0 ,0 ,0.3)
+                content: ''
+
 .first-screen-slider
     & .owl-nav
         position: absolute
@@ -485,10 +510,10 @@ button.link-v1
         z-index: 100
         //transform: rotate(45deg)
         background-color: $black
-    //&:hover
-        &:before
-            background-color: #fff
-            +trans()
+//&:hover
+    &:before
+        background-color: #fff
+        +trans()
 
 
 
@@ -524,9 +549,6 @@ button.link-v1
     & .owl-stage-outer
         height: 100%
 
-
-
-
 .whats-for-dinner
     & .allocation-sep
         width: 250px
@@ -543,6 +565,7 @@ button.link-v1
 .index__blog__listing
     border-bottom: 1px solid $darkestgrey
     padding-bottom: 40px
+
 .footer__form
     +fluid-columns(2, 100px, 0)
 
@@ -558,7 +581,7 @@ button.link-v1
         background-color: inherit
         padding: 5px 15px
         border: 1px solid $darkestgrey
-        
+
 .footer__textarea-wrapper
     width: 100%
     height: 100px
@@ -579,9 +602,11 @@ footer
         min-height: 100px
     & .logo
         background-size: 99px
-        min-height: 130px //ehth
+        min-height: 130px
+    //ehth
     & .logo__title
         +position(relative, 76px none none none)
+
 .footer__top
     padding-bottom: 70px
 
@@ -604,7 +629,6 @@ footer
 .footer__copyright
     border-top: 1px solid $darkestgrey
     padding: 45px 0 45px 0
-
 
 .our-item__title
     white-space: nowrap
@@ -646,6 +670,17 @@ footer
 
 .testiomonials-quote
     max-width: 374px
+    &:before
+        content: '\f10e'
+        display: block
+        font-family: $ffF-A
+        margin-bottom: 20px
+    &:after
+        content: '\f10d'
+        display: block
+        font-family: $ffF-A
+        margin-top: 20px
+
 
 .testimonials-quoters
     padding: 65px 0 65px 0
@@ -726,7 +761,6 @@ footer
             border-top: 1px solid rgba(255, 255, 255, 0.3)
             z-index: -1
 
-
 .our-item-header .img-wrapper
     max-height: 305px
 
@@ -774,6 +808,7 @@ footer
         border-top: 1px solid $darkergrey
     &:last-child(n-1)
         width: 30px
+
 .t-cell
     width: auto
 
@@ -825,7 +860,12 @@ footer
             padding-left: 30px
 
 .contacts-us__inform
-    +fluid-columns(2, 70px, 0)
+    margin-left: -25px
+    margin-right: -25px
+    & > .grid-wrapper
+        max-width: 50%
+        padding-left: 25px
+        padding-right: 25px
 
 .contacts-us__inform-item
     display: flex
@@ -837,3 +877,307 @@ footer
     width: 100%
     display: flex
     flex-direction: row
+    align-items: baseline
+
+.accordeon-item
+    border-bottom: 1px solid $darkestgrey
+    padding: 35px 0
+
+.plus-icon
+    +size(20px 20px)
+    cursor: pointer
+    +position(absolute, 34px none none 22px)
+    //rth
+    +trans()
+    &:before
+        display: block
+        content: ''
+        +position(absolute, 9px none none 9px)
+        +size(2px 14px)
+        background-color: $beige
+        +trans()
+    &.active
+        &:before
+            display: none
+            +trans()
+
+    &:after
+        display: block
+        content: ''
+        +position(absolute, 9px none none 9px)
+        +transform(rotate(90deg))
+        +size(2px 14px)
+        background-color: $beige
+        +trans()
+
+.accordeon-item__content
+    padding: 20px
+
+.contents-item__link
+    color: $beige
+    &:hover
+        color: $orange
+        text-decoration: underline
+
+.contents-item__link
+    &:before
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        +size(6px 6px)
+        margin-right: 10px
+        background-color: $beige
+        +transform(rotate(45deg))
+
+.answers-item
+    padding-bottom: 40px
+    border-bottom: 1px solid $darkestgrey
+    &:last-child
+        border: none
+
+.accordeon-title, .accordeon-item__content
+    padding-left: 50px
+
+.grey-line-sep
+    border-bottom: 1px solid $darkestgrey
+
+.con-2_30
+    +fluid-columns(2, 30px, 0)
+
+.con-3_30
+    +fluid-columns(3, 30px, 0)
+
+.black-block
+    padding: 25px 40px
+    background-color: $darkerblack
+    +trans()
+    &:hover
+        background-color: $beige
+        & p
+            color: $black
+
+.black-block-number
+    color: $grey
+
+.masonry-item
+    display: block
+    margin: 5px
+    float: left
+    overflow: hidden
+    height: 350px
+    //background-color: $beige*0.8
+    &.row-1
+        width: 350px
+    &.row-7
+        width: 710px
+    &.col-2
+        height: 708px
+    &.col-1
+        height: 350px
+
+.partners-list
+    +fluid-columns(6, 30px, 30px)
+    padding-bottom: 20px
+
+.con-2_15
+    +fluid-columns(2, 15px, 0)
+
+.btn
+    color: $black
+    border-radius: 0
+    letter-spacing: 0.1em
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    white-space: nowrap
+    font-size: 14px
+    height: 40px
+
+.btn_socials
+    @extend .btn
+    padding: 0 80px
+    &.google-icon
+        &:before
+            color: #fff
+            margin-right: 10px
+            font-size: 18px
+
+    &.facebook-icon
+        &:before
+            color: #fff
+            margin-right: 10px
+            font-size: 18px
+
+    &.twitter-icon
+        &:before
+            color: #fff
+            margin-right: 10px
+            font-size: 18px
+
+    &.red
+        background-color: $lightred
+        &:hover
+            background: $red
+            +trans()
+    &.blue
+        background-color: $lightblue
+        &:hover
+            background: $blue
+            +trans()
+    &.purple
+        background-color: $lightpurple
+        &:hover
+            background: $purple
+            +trans()
+
+.social-buttons > a
+    margin-right: 15px
+    &:last-child
+        margin-right: 0
+
+.input-wrapper
+    width: 100%
+    height: 40px
+
+.beige-btn
+    @extend .btn
+    background-color: $beige
+    padding: 0 30px
+    &:hover
+        background-color: $orange
+
+.page-prices__list > li
+    margin-bottom: 10px
+    &:last-child
+        margin-bottom: 0
+
+.al-sep
+    &:before
+        content: ''
+        display: block
+        +position(absolute, 50% none none 106%)
+        border-bottom: 1px solid $beige
+        width: 100vw
+        margin-left: 20px
+    &:after
+        margin-left: 20px
+        content: ''
+        position: absolute
+        left: 100%
+        width: 6px
+        height: 6px
+        bottom: calc(100% - 12px)
+        transform: rotate(45deg)
+        background-color: $beige
+
+.pricing-footer
+    margin-top: auto
+    padding: 15px 0
+
+.prices-block
+    background-color: #000
+    padding: 40px 40px //ethtjry
+    min-height: 390px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+.b-prices-link
+    background-color: #000
+    border-bottom: 1px solid $darkestgrey
+    padding: 33px
+    &:hover
+        background-color: $beige
+        & p
+            color: $black
+
+.arrow-right
+    &:before
+        +arr(9px, 3px, r, $beige)
+        font-family: $ffF-A
+        display: inline-block
+        vertical-align: middle //gr
+        font-weight: 400
+        font-style: normal
+
+
+.FA-icon
+    font-family: $ffF-A
+    display: inline-block
+    font-weight: 400
+    font-style: normal
+    font-size: 18px
+
+.phone-icon
+    &:before
+        @extend .FA-icon
+        content: '\f095'
+        color: $grey
+
+.mail-icon
+    &:before
+        @extend .FA-icon
+        content: '\f0e0'
+        color: $grey
+
+.profile-inner
+    padding: 20px
+    background-color: #000
+    width: 100%
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+
+.site-content-item
+    width: 100%
+    display: block
+    position: relative
+    margin-bottom: 25px
+    &:last-child
+        margin-bottom: 0
+    &.rhomb-marker:before
+        background-color: #fff
+
+.site-content__sub-item
+    width: 100%
+    display: block
+    position: relative
+    margin-bottom: 15px
+    color: $grey
+    font-weight: 700
+    &:last-child
+        margin-bottom: 0
+    &.rhomb-marker:before
+        background-color: $grey
+
+.site-content__sub-menu
+    padding-left: 15px
+
+.cell-5
+    width: 50%
+
+.site-content-wrapper
+    +fluid-columns(2, 30px, 0)
+
+.grid-gallery
+    & > .masonry-item
+        display: block
+        margin: 5px
+        float: left
+        overflow: hidden
+        height: 350px
+        &.row-1
+            width: 270px
+        &.row-2
+            width: 550px
+        &.row-7
+            width: 550px
+        &.col-2
+            height: 470px
+        &.col-1
+            height: 230px
+
+
+
+
+

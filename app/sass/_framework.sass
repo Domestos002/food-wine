@@ -1,11 +1,7 @@
-@import _variables.sass
-@import mixins/_retina_sprites.sass
+@import _imports.sass
 
 .clearfix
-    &:after
-        clear: both
-        display: block
-        content: ''
+    +clearfix()
 
 .ttu
     text-transform: uppercase
@@ -13,9 +9,12 @@
 .left
     float: left
 
+.tal
+    text-align: left
+
 .right
     float: right
-    //g4efe
+//g4efe
 .db
     display: block
 
@@ -33,6 +32,9 @@
     align-items: baseline
     justify-content: center
 
+.centered
+    margin: 0 auto
+
 .fl-start
     display: flex
     justify-content: flex-start
@@ -44,6 +46,9 @@
     display: flex
     flex-direction: row
     align-items: center
+
+.cur-p
+    cursor: pointer
 
 .p-rel
     position: relative
@@ -69,6 +74,10 @@
 .tac
     text-align: center
 //______________________________________Текста и цвета____________________
+
+.ovh
+    overflow: hidden
+
 .white
     color: #fff
 
@@ -86,7 +95,6 @@
 
 .ffMS
     font-family: $ffM-s
-//______________________________________ENDТекста и цвета____________________
 
 .fz18
     font-size: 18px
@@ -103,17 +111,25 @@
 .mb45
     margin-bottom: 45px
 
+.mb60
+    margin-bottom: 60px
+
 .mb25
     margin-bottom: 25px
 
 .mb5
     margin-bottom: 5px
 
+.mr10
+    margin-right: 10px
+
 .mb85
     margin-bottom: 85px
 
 .ml20
     margin-left: 20px
+
+
 
 .mr20
     margin-right: 20px
@@ -127,8 +143,26 @@
 .mb45
     margin-bottom: 45px
 
+.pl15
+    padding-left: 15px
+
 .mb20
     margin-bottom: 20px
+
+.mb120
+    margin-bottom: 120px
+
+.cur-p
+    cursor: pointer
+
+.pb80
+    padding-bottom: 80px
+
+.pb20
+    padding-bottom: 20px
+
+.mb150
+    margin-bottom: 150px
 
 .mt50
     margin-top: 50px
@@ -157,13 +191,17 @@
 //.grey-line
     border-top: 1px solid $darkestgrey
 
+.scale-on-hover
+    &:hover
+        transform: scale(1.05)
+        +trans()
+
 .gutter70
     margin-left: -15px
     margin-right: -15px
     & > div
         padding-left: 15px
         padding-right: 15px
-
 
 .index-image-block
     +retina-bg("index-bg-1.png", "index-bg-1@2x.png")
@@ -177,3 +215,42 @@
 
 .cell-8
     width: 66.66667%
+
+.allocation-grad-line
+    position: relative
+    display: flex
+    align-items: center
+    &:before
+        margin-top: -1px
+        content: ""
+        display: inline-block
+        margin-right: 10px
+        +size(100px 1px)
+        background-image: -webkit-linear-gradient(right, #fff 0%, #1d1d1d 100%)
+        background-image: -o-linear-gradient(right, #fff 0%, #1d1d1d 100%)
+        background-image: linear-gradient(to left, #fff 0%, #1d1d1d 100%)
+        background-repeat: repeat-x
+        opacity: .3
+    &:after
+        +size(100px 1px)
+        margin-top: -1px
+        margin-left: 10px
+        content: ""
+        display: inline-block
+        background-image: -webkit-linear-gradient(right, #1d1d1d 0%, #fff 100%)
+        background-image: -o-linear-gradient(right, #1d1d1d 0%, #fff 100%)
+        background-image: linear-gradient(to left, #1d1d1d 0%, #fff 100%)
+        background-repeat: repeat-x
+        opacity: .3
+
+
+.rhomb-marker
+    padding-left: 15px
+    &:before
+        content: ''
+        +position(absolute, none none calc(100% - 12px) 0)
+        +size(6px 6px)
+        margin-right: 10px
+        background-color: $grey
+        +transform(rotate(45deg))
+

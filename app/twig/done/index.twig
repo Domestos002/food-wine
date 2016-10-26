@@ -134,30 +134,7 @@
             <div class="container">
                 <p class="page-title fz-large white tac mb80">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Aliquam at aut blanditiis cupiditate distinctio e</p>
-                <div class="shapes fl-grid mb80">
-                    <div class="shapes-item fl-center page-title fd-c">
-                        <div class="shapes-item-content  fd-c fl-center"><span
-                                    class="white fw700 fz-large db">8648</span>
-                            <p class="white">Lorem ipsum.</p></div>
-                    </div>
-                    <div class="shapes-item fl-center page-title fd-c">
-                        <div class="shapes-item-content  fd-c fl-center"><span
-                                    class="white fw700 fz-large db">8648</span>
-                            <p class="white">Lorem ipsum.</p></div>
-                    </div>
-                    <div class="shapes-item fl-center page-title fd-c">
-                        <div class="shapes-item-content  fd-c fl-center">
-                            <span class="white fw700 fz-large db">8648</span>
-                            <p class="white">Lorem ipsum.</p>
-                        </div>
-                    </div>
-                    <div class="shapes-item fl-center page-title fd-c">
-                        <div class="shapes-item-content  fd-c fl-center">
-                            <span class="white fw700 fz-large db">8648</span>
-                            <p class="white">Lorem ipsum.</p>
-                        </div>
-                    </div>
-                </div>
+                {% include "layouts/shapes.twig" %}
                 <div class="advantages  gutter70">
                     <div class="grid-wrapper">
                         <div class="advantages-item">
@@ -250,50 +227,6 @@
             </div>
 
         </div>
-
-        <div class="testimonials">
-            <div class="container grey-line">
-                <p class="page-text-title white fz-large tac ttu">testimonials</p>
-                <div class="testimonials-quoters  owl-carousel tac">
-                    <div class="testimonials-quoters__item grey fz-base ffMS">
-                        <div class="testiomonials-quote mb30">Best wine restaurant on the planet. Bar none. Smoked
-                            salmon is also divine. Without a doubt, one of my favorite places in the world.
-                        </div>
-                        <p class="page-text-title white fz-base tac">Dennis Richardson</p>
-                        <p class="page-text-title white tac">(manager)</p>
-                    </div>
-                    <div class="testimonials-quoters__item grey fz-base ffMS">
-                        <div class="testiomonials-quote mb30">Best wine restaurant on the planet. Bar none. Smoked
-                            salmon is also divine. Without a doubt, one of my favorite places in the world.
-                        </div>
-                        <p class="page-text-title white fz-base tac">Dennis Richardson</p>
-                        <p class="page-text-title white tac">(manager)</p>
-
-                    </div>
-                    <div class="testimonials-quoters__item grey fz-base ffMS">
-                        <div class="testiomonials-quote mb30">Best wine restaurant on the planet. Bar none. Smoked
-                            salmon is also divine. Without a doubt, one of my favorite places in the world.
-                        </div>
-                        <p class="page-text-title white fz-base tac">Dennis Richardson</p>
-                        <p class="page-text-title white tac">(manager)</p>
-                    </div>
-                    <div class="testimonials-quoters__item grey fz-base ffMS">
-                        <div class="testiomonials-quote mb30">Best wine restaurant on the planet. Bar none. Smoked
-                            salmon is also divine. Without a doubt, one of my favorite places in the world.
-                        </div>
-                        <p class="page-text-title white fz-base tac">Dennis Richardson</p>
-                        <p class="page-text-title white tac">(manager)</p>
-
-                    </div>
-                    <div class="testimonials-quoters__item grey fz-base ffMS">
-                        <div class="testiomonials-quote mb30">Best wine restaurant on the planet. Bar none. Smoked
-                            salmon is also divine. Without a doubt, one of my favorite places in the world.
-                        </div>
-                        <p class="page-text-title white fz-base tac">Dennis Richardson</p>
-                        <p class="page-text-title white tac">(manager)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include "layouts/testimonials.twig" %}
     </div>
 {% endblock %}
