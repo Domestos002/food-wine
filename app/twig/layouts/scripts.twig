@@ -1,12 +1,11 @@
 <!-- build:js js/vendor.js -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
-<script src="http://masonry.desandro.com/v2/jquery.masonry.min.js"></script>
 {#
 <script src="bower_components/masonry/masonry.js"></script>
 #}
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 {#<script src="js/input.mask.js"></script>#}
-{#<script src="js/PP.js"></script>#}
 <!-- endbuild -->
 
 <!-- build:js js/common.js -->
@@ -42,38 +41,5 @@
              }
         });
     });
-    $(function () {
-        $('#masonry-container').masonry({
-            // options
-            itemSelector: '.masonry-item',
-            singleMode: false,
-            isResizable: true,
-            isAnimated: true,
-            isFitWidth: true,
-            animationOptions: {
-                queue: false,
-                duration: 500
-            }
-        });
-    });
-    $(function () {
-        $('#masonry-container').masonry({
-            // options
-            itemSelector: '.masonry-item',
-            singleMode: false,
-            isResizable: true,
-            isAnimated: true,
-            isFitWidth: true,
-            animationOptions: {
-                queue: false,
-                duration: 500
-            }
-        });
-    });
-    /*$('#masonry-container').masonry({
-        itemSelector: '.masonry-item',
-        columnWidth: function( containerWidth ) {
-            return containerWidth / 3;
-        }
-    });*/
+
 </script>

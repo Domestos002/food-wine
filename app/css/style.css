@@ -340,6 +340,21 @@
   transform: rotate(45deg);
 }
 
+.rhomb-sep:after {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 15px;
+  margin-right: 15px;
+  transform: rotate(45deg);
+  background-color: #787878;
+}
+.rhomb-sep:after:last-child:after {
+  display: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -723,10 +738,8 @@ button.link-v1 {
   content: "";
   vertical-align: middle;
   display: inline-block;
-  right: 100%;
   width: 6px;
   height: 6px;
-  bottom: calc(100% - 3px);
   margin-left: 15px;
   margin-right: 15px;
   transform: rotate(45deg);
@@ -1317,8 +1330,15 @@ footer .logo__title {
   max-height: 305px;
 }
 
-.whats-for-dinner:hover {
-  transform: scale(1.05);
+.whats-for-dinner:hover .img {
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.whats-for-dinner .img {
   transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
@@ -1393,21 +1413,21 @@ footer .logo__title {
   width: auto;
 }
 
-.icon, .google-icon, .linkedin-icon, .facebook-icon, .twitter-icon {
+.icon, .google-icon, .linkedin-icon, .facebook-icon, .twitter-icon, .fa-clock-o {
   height: 30px;
   width: 30px;
   font-size: 18px;
 }
-.icon:before, .google-icon:before, .linkedin-icon:before, .facebook-icon:before, .twitter-icon:before {
+.icon:before, .google-icon:before, .linkedin-icon:before, .facebook-icon:before, .twitter-icon:before, .fa-clock-o:before {
   font-family: "FontAwesome";
   font-weight: 400;
   display: inline-block;
   color: #e0ca8f;
 }
-.icon:hover, .google-icon:hover, .linkedin-icon:hover, .facebook-icon:hover, .twitter-icon:hover {
+.icon:hover, .google-icon:hover, .linkedin-icon:hover, .facebook-icon:hover, .twitter-icon:hover, .fa-clock-o:hover {
   background-color: #e0ca8f;
 }
-.icon:hover:before, .google-icon:hover:before, .linkedin-icon:hover:before, .facebook-icon:hover:before, .twitter-icon:hover:before {
+.icon:hover:before, .google-icon:hover:before, .linkedin-icon:hover:before, .facebook-icon:hover:before, .twitter-icon:hover:before, .fa-clock-o:hover:before {
   color: #1d1d1d;
   font-weight: 400;
 }
@@ -1634,10 +1654,10 @@ footer .logo__title {
 }
 
 .masonry-item {
-  display: block;
   margin: 5px;
   float: left;
   overflow: hidden;
+  display: block;
   height: 350px;
 }
 .masonry-item.row-1 {
@@ -1920,7 +1940,7 @@ footer .logo__title {
 }
 
 .grid-gallery > .masonry-item {
-  display: block;
+  display: none;
   margin: 5px;
   float: left;
   overflow: hidden;
@@ -1940,4 +1960,31 @@ footer .logo__title {
 }
 .grid-gallery > .masonry-item.col-1 {
   height: 230px;
+}
+.grid-gallery > .masonry-item.active {
+  display: block;
+}
+
+.blog > .masonry-item {
+  display: block;
+  margin: 5px;
+  float: left;
+  overflow: hidden;
+  background: #fff;
+  width: calc(33.3% - (1 - 1/3)*30px);
+}
+
+.blog-item__footer {
+  display: block;
+  padding: 30px;
+  background-color: #000;
+}
+
+.blog-container {
+  max-width: 0;
+  padding: 80px;
+}
+
+.fa-clock-o:before {
+  content: "";
 }

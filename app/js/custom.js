@@ -31,6 +31,19 @@
         }
     };
 
+   function masonryy() {
+        $('#masonry-container').masonry({
+            isAnimated: true,
+            itemSelector: '.masonry-item',
+            columnWidth: 20
+        });
+    }
+
+    function masonryReload() {
+        $('#masonry-container').masonry('layout');
+    }
+
+
     $(document).ready(function () {
         var timeOut;
         var item;
@@ -78,6 +91,26 @@
 
             e.preventDefault();
         });
+        masonryy();
+        /*$('[data-tab]').click(function () {
+            var this_tab_val = $(this).attr('data-tab');
+            $('#masonry-container').masonry( 'remove', $("[data-content='" + this_tab_val + "']"));
+            $('#masonry-container').masonry( 'additems', $("[data-content='" + this_tab_val + "']"));
+            masonryReload
+
+        });*/
+
+        $('[data-tab]').click(function () {
+            if (!($(this).hasClass('active'))){
+                var this_tab_val = $(this).attr('data-tab');
+                $("[data-content]").fadeOut(100, masonryReload);
+                $("[data-content]").removeClass("active");
+                $("[data-tab]").removeClass("active");
+                $("[data-content='" + this_tab_val + "']").fadeIn(100, masonryReload);
+                $("[data-content='" + this_tab_val + "']").addClass('active');
+                $("[data-tab='" + this_tab_val + "']").addClass('active');
+            }
+        });
 
         showButton();
         stickyHeader();
@@ -87,17 +120,6 @@
         $(document).scroll(function () {
             stickyHeader();
         });
-
-        /*$('.dd').mousemove(function (e) {
-         // положение элемента
-         var pos = $(this).offset();
-         var elem_left = pos.left;
-         var elem_top = pos.top;
-         // положение курсора внутри элемента
-         var Xinner = e.pageX - elem_left;
-         var Yinner = e.pageY - elem_top;
-         console.log("X: " + Xinner + " Y: " + Yinner); // вывод результата в консоль
-         });*/
 
     });
     $(function () {
