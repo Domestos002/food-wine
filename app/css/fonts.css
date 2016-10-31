@@ -1,16 +1,45 @@
 @font-face {
-    font-family: 'Merriweather-Regular';
-    /*src: url('../fonts/Roboto-regular.eot');
-    src: url('../fonts/Roboto-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-regular.woff') format('woff'), */url('../fonts/Merriweather-Regular.ttf') format('truetype'); /*url('../fonts/Roboto-regular.svg#Roboto-Regular') format('svg');*/
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot');
+    src: url('../fonts/fontello.eot?#iefix') format('embedded-opentype'), url('../fonts/fontello.woff') format('woff'), url('../fonts/fontello.ttf') format('truetype'); url('../fonts/fontello.svg#fontello') format('svg');
     font-style: normal;
     font-weight: normal;
 }
 
 
 @font-face {
-    font-family: 'Merriweather-Bold';
-    /*src: url('../fonts/Roboto-regular.eot');
-    src: url('../fonts/Roboto-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-regular.woff') format('woff'), */url('../fonts/Merriweather-Bold.ttf') format('truetype'); /*url('../fonts/Roboto-regular.svg#Roboto-Regular') format('svg');*/
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-regular.eot');
+    src: url('../fonts/Roboto-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-regular.woff') format('woff'), url('../fonts/Roboto-regular.ttf') format('truetype'), url('../fonts/Roboto-regular.svg#Roboto-Regular') format('svg');
     font-style: normal;
     font-weight: normal;
+}
+
+@font-face {
+    font-family: 'circle-light';
+    src: url('../fonts/circle-light.eot');
+    src: url('../fonts/circle-light.eot?#iefix') format('embedded-opentype'), url('../fonts/circle-light.woff') format('woff'), url('../fonts/circle-light.ttf') format('truetype'), url('../fonts/circle-light.svg#circle-light') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'circle';
+    src: url('../fonts/circle.eot');
+    src: url('../fonts/circle.eot?#iefix') format('embedded-opentype'), url('../fonts/circle.woff') format('woff'), url('../fonts/circle.ttf') format('truetype'), url('../fonts/circle.svg#circle') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'circle-bold';
+    src: url('../fonts/CRC65_0.eot');
+    src: url('../fonts/CRC65_0.eot?#iefix') format('embedded-opentype'), url('../fonts/CRC65_0.woff') format('woff'), url('../fonts/CRC65_0.ttf') format('truetype'), url('../fonts/CRC65_0.svg#circle') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'rouble';
+    src: url('../fonts/rouble.ttf');
 }

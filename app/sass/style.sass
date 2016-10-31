@@ -1,1206 +1,228 @@
 @import _imports.sass
 @import _framework.sass
+@import _page_template.sass
 @import _responsive.sass
-//____________________
+
+//____________________________________________________________________________
+@import url('https://fonts.googleapis.com/css?family=Merriweather')
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans')
+//_____________________________________________________________________________
 
 a
     text-decoration: none
 
 body
     line-height: 1.42857
-    font-family: $ffM
-    background-color: $black
-    font-size: 14px
+    font-size: $fz-base
+    font-family: $ffCir //ths
+    color: $black
 
 input
-    width: 100%
-    height: 100%
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-    background-color: inherit
-    padding: 5px 15px
-    border: 1px solid #333
+    -webkit-box-sizing: border-box !important
+    -moz-box-sizing: border-box !important
+    box-sizing: border-box !important
 
-.header-nav
-    width: 100%
-    margin: 0 auto
-    background-color: $black
-    display: flex
-    justify-content: space-between
-    padding-bottom: 20px
 
-.container
-    max-width: 1200px
-    margin: 0 auto
-    padding-left: 15px
-    padding-right: 15px
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-
-.fixed
-
-    border-bottom: 1px solid $grey
-    position: fixed
-    top: 0
-    z-index: 700
-    padding-bottom: 10px
-    padding-top: 10px
-
-.header-nav-item
-    display: flex
-    flex-grow: 1
-    margin-left: 3px
-    margin-right: 3px
-    border-right: 1px solid $darkestgrey
-    &:last-child
-        border-right: none
-
-.header-nav-wrapper
-    width: 1200px
-    //ge
-    margin: 0 auto
-    background-color: $black
-
-.header-nav__dd
-    +position(absolute, 100% none none 0)
-    z-index: 600
-    width: 300px
-    margin-top: 60px
-    background-color: $beige
-    display: none
-    opacity: 0
-
-.header-nav__dd-item
-    text-align: center
-
-.header-nav__dd-link
-    text-align: center
-    text-transform: uppercase
+.icon-fl
+    font-family: $ffFl
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1em
+    speak: none
     display: inline-block
-    text-decoration: none
-    letter-spacing: 0.19em
-    color: $black
-    font-size: 14px
-    width: 100%
-    padding: 10px 0 10px 0
-    &:hover
-        +trans()
-        color: $grey
-
-.header-nav-link
-    letter-spacing: 0.19em
-    width: 100%
-    text-align: center
-    text-decoration: none
-    color: $beige
-    //erghergh
-    font-size: 14px
-    padding: 10px 25px 10px 25px
-    &:hover
-        +trans()
-        color: $black
-        background-color: $beige
-
-.logo
-    +retina-bg("logo.png", "logo@2x.png")
-    background-repeat: no-repeat
-    background-position: center center
-    min-height: 150px
-
-.logo-wrapper
-    margin: 0 auto
-    max-width: 500px
-
-button.link-v1
-    background-color: transparent
-    border: none
-    cursor: pointer
-
-//______________________text______________
-.link-v1
-    @extend .page-title-text
-    color: $beige
-    &:hover
-        color: $grey
-
-.link-v2
-    color: #fff
-    &:hover
-        color: $beige
-
-.link-v3
-    letter-spacing: 0.1px
-    font-family: $ffM-s
-    color: $grey
-    &.no-hover
-        &:hover
-            color: $grey
-    &.hover
-        &:hover
-            text-decoration: underline
-    &:hover
-        color: $beige
-
-.link-v4
-    color: $beige
-    &:hover
-        color: $orange
-
-.link-v5
-    color: $grey
-    &:hover
-        color: $beige
-
-.page-title-text
-    line-height: 1.3em
-    letter-spacing: 0.15em
-//herh2
-
-.fz-large
-    font-size: 30px
-
-.fz-base
-    font-size: 18px
-
-.fz-small
-    font-size: 14px
-
-.small-text-block > p
-    margin-bottom: 30px
-    &:last-child
-        margin-bottom: 0
-//______________________endtext______________
-
-.header-title
-    letter-spacing: 0.2em
-
-.small-sep
-    display: block
-    position: relative
-    border-bottom: 1px solid $darkergrey
-    width: 59px
-    margin: 0 auto
-    margin-top: 34px
-    margin-bottom: 43px
-    &:before
-        content: ''
-        position: absolute
-        right: calc(50% - 3px)
-        width: 6px
-        height: 6px
-        bottom: calc(100% - 3px)
-        transform: rotate(45deg)
-        background-color: $darkergrey
-
-.allocation-sep
-    display: block
-    position: relative
-    border-bottom: 1px solid $darkergrey
-    width: 100%
-    margin: 0 auto
-    margin-top: 34px
-    margin-bottom: 43px
-    margin: auto
-    &.begin:before
-        content: ''
-        position: absolute
-        left: 100%
-        width: 6px
-        height: 6px
-        bottom: calc(100% - 3px)
-        transform: rotate(45deg)
-        background-color: $darkergrey
-    &.end:before
-        content: ''
-        position: absolute
-        right: 100%
-        width: 6px
-        height: 6px
-        bottom: calc(100% - 3px)
-        transform: rotate(45deg)
-        background-color: $darkergrey
-
-.banners-item
-    background-color: $darkerblack
-    margin-bottom: 20px
-    padding-bottom: 30px
-    position: relative
-
-.designers-things
-    display: flex
-    justify-content: space-between
-    &:before
-        display: inline-block
-        height: 2px
-        vertical-align: top
-        width: 50%
-        content: ''
-        border-top: 3px solid $beige
-    &:after
-        display: inline-block
-        height: 2px
-        vertical-align: top
-        width: 50%
-        content: ''
-        border-top: 3px solid $beige
-
-.banners-link
-    color: $beige
-    margin-bottom: 5px
-    &:hover
-        color: $orange
-
-.arrow-down
-    width: 60px
-    margin: 0 auto
-    height: 30px
-    display: flex
-    &:before
-        content: ''
-        margin: auto
-        display: inline-block
-        width: 10px
-        height: 10px
-        background: transparent
-        transform: rotate(45deg)
-        border-bottom: 3px solid $beige
-        border-right: 3px solid $beige
-
-.arrow-down-wrapper
-    width: 60px
-    margin: 0 auto
-
-.our-menu-item
-    background-color: $darkerblack
-
-.img
-    width: 100%
-
-.img-wrapper
-    width: 100%
-
-.our-menu-item-inner
-    padding-left: 30px
-    padding-right: 30px
-    padding-bottom: 75px
-
-.shapes
-    max-width: 750px
-    margin: 0 auto 80px auto
-//gh
-
-.shapes-item
-    &:before
-        content: ''
-        display: inline-block
-        vertical-align: middle
-        position: absolute
-        width: 100px
-        height: 100px
-        transform: rotate(45deg)
-        border: 1px solid rgba(255, 255, 255, 0.3)
-
-.shapes-item-content
-    z-index: 10
-
-.index__blog__item__header
-    position: absolute
-    top: 30px
-    left: 30px
-    right: 30px
-
-.index__blog__item__footer
-    position: absolute
-    right: 30px
-    left: 35px
-    bottom: 28px
-
-.blog__item-link
-    &:after
-        content: ''
-        vertical-align: middle
-        display: inline-block
-        width: 6px
-        height: 6px
-        margin-left: 15px
-        margin-right: 15px
-        transform: rotate(45deg)
-        background-color: $darkergrey
-    &:last-child:after
-        display: none
-
-.clock-icon
-    +sprite(clock)
-    width: 24px
-    height: 24px
-
-.whats-for-dinner__banner
-    @include position(absolute, 50% 50%)
-
-.whats-for-dinner__banner__inner
-    max-width: 780px
-    margin: 0 auto
-    height: auto
-    position: relative
-    z-index: 10
-    & .page-title-text
-        letter-spacing: 0.3em
-        position: relative
-        z-index: 11
-    &:before
-        content: ''
-        display: inline-block
-        vertical-align: middle
-        background-color: $darkestgrey
-        z-index: 5
-        position: absolute
-        right: calc(50% - 100px)
-        top: calc(50% - 100px)
-        width: 200px
-        height: 200px
-        transform: rotate(45deg)
-        border: 1px solid rgba(255, 255, 255, 0.3)
-
-//&:before
-    content: ''
-    display: inline-block
-    vertical-align: middle
-    position: absolute
-    right: calc(50% - 100px)
-    top: calc(50% - 100px)
-    width: 200px
-    height: 200px
-    transform: rotate(45deg)
-    border: 1px solid rgba(255, 255, 255, 0.3)
-
-.first-screen, .first-screen-slider
-    height: calc(100vh - 220px)
-
-#button-up
-    display: none
-    cursor: pointer
-    height: 50px
-    width: 50px
-    bottom: 40px
-    right: 40px
-    border-radius: 50%
-    background-color: $beige
-    position: fixed
-    &:hover
-        background-color: $beige*0.8
-    &:before
-        +position(absolute, calc(50% - 5px) none none calc(50% - 6px))
-        +transform(translateX(50%))
-        +arr(10px, 3px, t, $orange)
-
-.logo-wrapper
-    min-height: 160px
-
-.image-wrapper
-    height: 100%
-    &.overlay
-        position: relative
-        &:hover
-            &:before
-                z-index: 400
-                position: absolute
-                top: 0
-                right: 0
-                width: 100%
-                height: 100%
-                background: rgba(0 ,0 ,0 ,0.3)
-                content: ''
-
-.first-screen-slider
-    & .owl-nav
-        position: absolute
-        top: 39.5%
-        left: 50%
-        transform: translate(-50%, -50%)
-        width: 75%
-        margin-top: -95px
-        z-index: 10
-
-    & .owl-prev
-        font-size: 0
-        content: ''
-        +size(60px 60px)
-        +position(absolute, none 100% calc(100% - 30px) none)
-        transform: rotate(45deg)
-        background-color: $darkergrey
-        &:before
-            z-index: 1
-            +position(absolute, calc(50% - 10px) calc(50% - 10px) none none)
-            content: ''
-            display: inline-block
-            width: 15px
-            height: 15px
-            background: transparent
-            border-bottom: 5px solid $beige
-            border-left: 5px solid $beige
-    & .owl-next
-        font-size: 0
-        content: ''
-        +position(absolute, none none calc(100% - 30px) 100%)
-        +size(60px 60px)
-        transform: rotate(45deg)
-        background-color: $darkergrey
-        &:before
-            z-index: 1
-            +position(absolute, calc(50% - 10px) calc(50% - 10px) none none)
-            content: ''
-            display: inline-block
-            width: 15px
-            height: 15px
-            background: transparent
-            border-top: 5px solid $beige
-            border-right: 5px solid $beige
-
-.first-screen-shape .arrow-down
-    &:before
-        +size(15px 15px)
-        border-bottom: 3px solid $beige
-        border-right: 3px solid $beige
-
-.first-screen-shape__content
-    position: relative
-    z-index: 600
-
-.first-screen-shape_bottom
-
-    & .beige-line
-        position: absolute
-        height: 2px
-        background-color: $beige
-        margin: 0 auto
-        z-index: -1
-        width: 830px
-    & .arrow-down
-        +size(15px 15px)
-        position: relative
-        top: 10px
-    z-index: 500
-    +position(absolute, 100% none none 50%)
-    transform: translate(-50%, -50%)
-    &:before
-        border: 2px solid $beige
-        transform: translate(-50%, -50%) rotate(45deg)
-        +position(absolute, 50% none none 48%)
-        display: inline-block
-        content: ''
-        +size(100px 100px)
-        z-index: 100
-        //transform: rotate(45deg)
-        background-color: $black
-
-.first-screen-shape
-    z-index: 500
-    +position(absolute, 70% none none 50%)
-    transform: translate(-50%, -50%)
-    &:before
-        transform: translate(-50%, -50%) rotate(45deg)
-        +position(absolute, 48% none none 48%)
-        display: inline-block
-        content: ''
-        +size(130px 130px)
-        z-index: 100
-        //transform: rotate(45deg)
-        background-color: $black
-//&:hover
-    &:before
-        background-color: #fff
-        +trans()
-
-
-
-
-.first-screen-content-label
-    +position(absolute, 35.5% none none 50%)
-    transform: translate(-50%, -50%)
-
-.first-screen-content
-    position: absolute
-    max-width: 1032px
-    z-index: 10
-    left: 15px
-    right: 15px
-    top: 0
-    bottom: 0
-    display: flex
-    align-items: center
-    flex-direction: column
-    justify-content: center
-    color: #fff
-    margin-left: auto
-    margin-right: auto
-    overflow: hidden
-    & .allocation-link
-        width: 100%
-        +position(absolute, 39.5% none none 50%)
-        transform: translate(-50%, -50%)
-        margin-top: -95px
-        z-index: 10
-
-.first-screen
-    & .owl-stage-outer
-        height: 100%
-
-.whats-for-dinner
-    & .allocation-sep
-        width: 250px
-
-.our-menu, .advantages
-    +fluid-columns(3, 50px, 0)
-
-//.testimonials-quoters
-    +fluid-columns(3, 30px, 0)
-
-.banners, .index__blog__listing
-    +fluid-columns(2, 30px, 0)
-
-.index__blog__listing
-    border-bottom: 1px solid $darkestgrey
-    padding-bottom: 40px
-
-.footer__form
-    +fluid-columns(2, 100px, 0)
-
-.footer__input-wrapper
-    width: 100%
-    height: 40px
-    & > input[type=text], & > input[type=email], & > input[type=number]
-        width: 100%
-        height: 100%
-        -webkit-box-sizing: border-box
-        -moz-box-sizing: border-box
-        box-sizing: border-box
-        background-color: inherit
-        padding: 5px 15px
-        border: 1px solid $darkestgrey
-
-.footer__textarea-wrapper
-    width: 100%
-    height: 100px
-    & > textarea
-        +size(100% 100px)
-        width: 100%
-        -webkit-box-sizing: border-box
-        -moz-box-sizing: border-box
-        box-sizing: border-box
-        background-color: inherit
-        padding: 5px 15px
-        border: 1px solid $darkestgrey
-
-footer
-    & > .container
-        padding-top: 70px
-    & .logo-wrapper
-        min-height: 100px
-    & .logo
-        background-size: 99px
-        min-height: 130px
-    //ehth
-    & .logo__title
-        +position(relative, 76px none none none)
-
-.footer__top
-    padding-bottom: 70px
-
-.footer__contacts-info
-    width: 230px
-    position: relative
-    &:before
-        position: absolute
-        left: 45%
-        width: 145%
-        +transform(translateX(-50%))
-        display: block
-        content: ''
-        height: 1px
-        background-image: linear-gradient(to right, #1d1d1d, #e0ca8f 50%, #1d1d1d)
-
-.footer__form
-    width: calc(100% - 200px)
-
-.footer__copyright
-    border-top: 1px solid $darkestgrey
-    padding: 45px 0 45px 0
-
-.our-item__title
-    white-space: nowrap
-    @include position(absolute, 25px none none 50%)
-    +transform(translateX(-50%))
-    &:before
-        position: absolute
-        right: -105px
-        top: 50%
-        margin-top: -1px
-        content: ""
-        display: inline-block
-        height: 1px
-        width: 100px
-        background-image: -webkit-linear-gradient(left, #fff 0%, #1d1d1d 100%)
-        background-image: -o-linear-gradient(left, #fff 0%, #1d1d1d 100%)
-        background-image: linear-gradient(to right, #fff 0%, #1d1d1d 100%)
-        background-repeat: repeat-x
-        opacity: .3
-    &:after
-        position: absolute
-        left: -110px
-        top: 50%
-        margin-top: -1px
-        content: ""
-        display: inline-block
-        height: 1px
-        width: 100px
-        background-image: -webkit-linear-gradient(left, #1d1d1d 0%, #fff 100%)
-        background-image: -o-linear-gradient(left, #1d1d1d 0%, #fff 100%)
-        background-image: linear-gradient(to right, #1d1d1d 0%, #fff 100%)
-        background-repeat: repeat-x
-        opacity: .3
-
-.testimonials
-    & > .container
-        padding-top: 70px
-        padding-bottom: 70px
-
-.testiomonials-quote
-    max-width: 374px
-    &:before
-        content: '\f10e'
-        display: block
-        font-family: $ffF-A
-        margin-bottom: 20px
-    &:after
-        content: '\f10d'
-        display: block
-        font-family: $ffF-A
-        margin-top: 20px
-
-
-.testimonials-quoters
-    padding: 65px 0 65px 0
-
-.testimonials
-    & .owl-stage-outer
-        margin-bottom: 45px
-    & .owl-next
-        font-size: 0
-        position: relative
-        &:before
-            z-index: 1
-            +position(absolute, calc(50% - 7px) calc(50% - 7px) none none)
-            content: ''
-            display: inline-block
-            width: 10px
-            height: 10px
-            background: transparent
-            transform: rotate(-135deg)
-            border-bottom: 3px solid $beige
-            border-left: 3px solid $beige
-        &:after
-            font-size: 0
-            content: ''
-            display: flex
-            z-index: 20
-            width: 25px
-            height: 25px
-            +transform(rotate(45deg))
-            background-color: $darkergrey
-    & .owl-prev
-        font-size: 0
-        position: relative
-        margin-right: 15px
-        &:before
-            z-index: 1
-            +position(absolute, calc(50% - 7px) calc(50% - 7px) none none)
-            content: ''
-            display: inline-block
-            width: 10px
-            height: 10px
-            background: transparent
-            transform: rotate(45deg)
-            border-bottom: 3px solid $beige
-            border-left: 3px solid $beige
-        &:after
-            font-size: 0
-            content: ''
-            display: flex
-            z-index: 20
-            width: 25px
-            height: 25px
-            +transform(rotate(45deg))
-            background-color: $darkergrey
-
-    & .owl-nav
-        position: relative
-        display: flex
-        justify-content: center
-        &:after
-            background-color: $black
-            z-index: -1
-            content: ''
-            position: absolute
-            top: 0
-            bottom: 0
-            left: 50%
-            -webkit-transform: translateX(-50%)
-            transform: translateX(-50%)
-            width: 92px
-        &:before
-            @include position(absolute, 50% 0 0 none)
-            margin-top: -1px
-            width: 100%
-            height: 1px
-            content: ""
-            display: inline-block
-            border-top: 1px solid rgba(255, 255, 255, 0.3)
-            z-index: -1
-
-.our-item-header .img-wrapper
-    max-height: 305px
-
-.whats-for-dinner
-    &:hover
-        .img
-            +transform(scale(1.03))
-
-.whats-for-dinner .img
-    +trans()
-
-.breadcrums-block
-    min-height: 405px
-    background-image: url("http://placehold.it/1000x405")
-    background-repeat: no-repeat
-    -webkit-background-size: cover
-    background-size: cover
-    background-position: center
-    & .allocation-link
-        width: 80%
-
-.breadcrum
-    &:after
-        content: '|'
-        padding: 0 7px 0 10px
-        display: inline-block
-        vertical-align: middle
-    &:hover
-        &:after
-            color: $black
-        color: $beige
-    &:last-child
-        &:after
-            content: ''
-            display: none
-        &:hover
-            color: $black
-
-.masonry-list
-    +fluid-columns(4, 30px, 0)
-
-.t-row
-    height: 33px
-    &.title
-        height: 75px
-        & > td
-            padding-top: 30px
-    &.border-bottom
-        border-top: 1px solid $darkergrey
-    &:last-child(n-1)
-        width: 30px
-
-.t-cell
-    width: auto
+    width: 1em
 
 .icon
-    +size(30px 30px)
-    font-size: 18px
+    display: inline-block
+    vertical-align: middle
 
-    &:before
-        font-family: $ffF-A
-        font-weight: 400
-        display: inline-block
-        color: $beige
-    &:hover
-        background-color: $beige
-        &:before
-            color: $black
-            font-weight: 400
+.circle-icon-wrapper
+    padding: 10px 0
+    width: 54px
+    height: 54px
+    border-radius: 50%
+    border: 1px solid #9d9d9d
 
-.google-icon
+
+
+.icon-building
     @extend .icon
-    &:before
-        content: '\f0d5'
+    +sprite(building)
 
-.linkedin-icon
+.icon-arrows-up
+    @extend .icon //rgt
+    +sprite(arrows-up)
+
+.icon-shop
     @extend .icon
-    &:before
-        content: '\f0e1'
+    +sprite(shop)
 
-.facebook-icon
+.icon-calendar
     @extend .icon
-    &:before
-        content: '\f09a'
+    +sprite(calendar)
 
-.twitter-icon
+.icon-header-logo
     @extend .icon
-    &:before
-        content: '\f099'
+    +sprite(logo)
 
-.masonry-list
-    &.border-bottom
-        border-bottom: 1px solid $darkergrey
-        padding-bottom: 40px
-    &.row
-        +fluid-columns(2, 30px, 0)
-        & .masonry
-            text-align: left
-            flex-direction: row
-        & .masonry-inform
-            padding-left: 30px
+.icon-person
+    @extend .icon
+    +sprite(person)
 
-.contacts-us__inform
-    margin-left: -25px
-    margin-right: -25px
-    & > .grid-wrapper
-        max-width: 50%
-        padding-left: 25px
-        padding-right: 25px
+.icon-heart
+    @extend .icon
+    +sprite(person)
 
-.contacts-us__inform-item
-    display: flex
-    flex-direction: column
-    align-items: center
-    text-align: left
-
-.contacts-us__block
-    width: 100%
-    display: flex
-    flex-direction: row
-    align-items: baseline
-
-.accordeon-item
-    border-bottom: 1px solid $darkestgrey
-    padding: 35px 0
-
-.plus-icon
-    +size(20px 20px)
-    cursor: pointer
-    +position(absolute, 34px none none 22px)
-    //rth
-    +trans()
-    &:before
-        display: block
-        content: ''
-        +position(absolute, 9px none none 9px)
-        +size(2px 14px)
-        background-color: $beige
-        +trans()
-    &.active
-        &:before
-            display: none
-            +trans()
-
-    &:after
-        display: block
-        content: ''
-        +position(absolute, 9px none none 9px)
-        +transform(rotate(90deg))
-        +size(2px 14px)
-        background-color: $beige
-        +trans()
-
-.accordeon-item__content
-    padding: 20px
-
-.contents-item__link
-    color: $beige
-    &:hover
-        color: $orange
-        text-decoration: underline
-
-.contents-item__link
-    &:before
-        content: ''
-        display: inline-block
-        vertical-align: middle
-        +size(6px 6px)
-        margin-right: 10px
-        background-color: $beige
-        +transform(rotate(45deg))
-
-.answers-item
-    padding-bottom: 40px
-    border-bottom: 1px solid $darkestgrey
-    &:last-child
-        border: none
-
-.accordeon-title, .accordeon-item__content
-    padding-left: 50px
-
-.grey-line-sep
-    border-bottom: 1px solid $darkestgrey
-
-.con-2_30
-    +fluid-columns(2, 30px, 0)
-
-.con-3_30
-    +fluid-columns(3, 30px, 0)
-
-.black-block
-    padding: 25px 40px
-    background-color: $darkerblack
-    +trans()
-    &:hover
-        background-color: $beige
-        & p
-            color: $black
-
-.black-block-number
-    color: $grey
-
-.masonry-item
-    margin: 5px
-    float: left
-    overflow: hidden
-    display: block
-    height: 350px
-    &.row-1
-        width: 350px
-    &.row-7
-        width: 710px
-    &.col-2
-        height: 708px
-    &.col-1
-        height: 350px
-
-
-.partners-list
-    +fluid-columns(6, 30px, 30px)
-    padding-bottom: 20px
-
-.con-2_15
-    +fluid-columns(2, 15px, 0)
-
-.btn
-    color: $black
-    border-radius: 0
-    letter-spacing: 0.1em
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-    white-space: nowrap
-    font-size: 14px
-    height: 40px
-
-.btn_socials
-    @extend .btn
-    padding: 0 80px
-    &.google-icon
-        &:before
-            color: #fff
-            margin-right: 10px
-            font-size: 18px
-
-    &.facebook-icon
-        &:before
-            color: #fff
-            margin-right: 10px
-            font-size: 18px
-
-    &.twitter-icon
-        &:before
-            color: #fff
-            margin-right: 10px
-            font-size: 18px
-
-    &.red
-        background-color: $lightred
-        &:hover
-            background: $red
-            +trans()
-    &.blue
-        background-color: $lightblue
-        &:hover
-            background: $blue
-            +trans()
-    &.purple
-        background-color: $lightpurple
-        &:hover
-            background: $purple
-            +trans()
-
-.social-buttons > a
-    margin-right: 15px
-    &:last-child
-        margin-right: 0
-
-.input-wrapper
-    width: 100%
-    height: 40px
-
-.beige-btn
-    @extend .btn
-    background-color: $beige
-    padding: 0 30px
-    &:hover
-        background-color: $orange
-
-.page-prices__list > li
-    margin-bottom: 10px
-    &:last-child
-        margin-bottom: 0
-
-.al-sep
-    &:before
-        content: ''
-        display: block
-        +position(absolute, 50% none none 106%)
-        border-bottom: 1px solid $beige
-        width: 100vw
-        margin-left: 20px
-    &:after
-        margin-left: 20px
-        content: ''
-        position: absolute
-        left: 100%
-        width: 6px
-        height: 6px
-        bottom: calc(100% - 12px)
-        transform: rotate(45deg)
-        background-color: $beige
-
-.pricing-footer
-    margin-top: auto
+.header-advantages-circles-list
+    background-color: $blue
     padding: 15px 0
 
-.prices-block
-    background-color: #000
-    padding: 40px 40px //ethtjry
-    min-height: 390px
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-.b-prices-link
-    background-color: #000
-    border-bottom: 1px solid $darkestgrey
-    padding: 33px
-    &:hover
-        background-color: $beige
-        & p
-            color: $black
 
-.arrow-right
+//_________________________text_____________________________________________________________
+.image-label
+    font-family: $ffRob-r
+    color: #fff
+    &.fz-small
+        font-size: 14px
+
+
+.base-title-label
+    color: $lighterblack
+    font-family: $ffCir-l
+    &.reg
+        font-family: $ffCir
+    &.light
+        font-family: $ffCir-l
+    &.bold
+        font-family: $ffCir-b
+    &.grey
+        color: #747474
+    &.lightgrey
+        color: #a5a5a5
+    &.black
+        color: #000
+    &.fz-base
+        font-size: 15px
+    &.fz-small
+        font-size: 13px
+    &.fz-large
+        font-size: 17px
+    &.lh23
+        line-height: 23px
+    &.lh41
+        line-height: 41px
+    &.lh49
+        line-height: 49px
+    &.lh40
+        line-height: 40px
+    &.lh28
+        line-height: 28px
+    &.lh36
+        line-height: 36px
+
+
+.base-title
+    font-family: $ffCir
+    color: $black
+    &.black
+        color: $lighterblack
+    &.fz-small
+        font-size: 26px
+    &.fz-big
+        font-size: 31px
+    &.fz-large
+        font-size: 43px
+    &.reg
+        font-family: $ffCir
+    &.light
+        font-family: $ffCir-l
+    &.bold
+        font-family: $ffCir-b
+    &.lh23
+        line-height: 23px //etry
+    &.lh41
+        line-height: 41px
+    &.lh49
+        line-height: 49px
+    &.lh40
+        line-height: 40px
+    &.lh28
+        line-height: 28px
+    &.lh36
+        line-height: 36px
+
+//______________________________________ENDtext_____________________________________
+
+.header-info
+    padding: 30px 0 //gwrgrfgr
+
+header .navbar-form > .form-group
+    input
+        width: 175px
+
+header .nav > li
+    &.active
+        & > a
+            &:hover
+            text-decoration: underline
+    & > a
+        font-family: $ffCir
+        text-transform: uppercase
+        line-height: 41px
+        &:hover
+            text-decoration: underline
+
+header .nav
+    width: calc(100% - 250px)
+    & > li
+        //& > a
+            padding-right: 66px
+        &:first-child > a
+            padding-left: 0
     &:before
-        +arr(9px, 3px, r, $beige)
-        font-family: $ffF-A
-        display: inline-block
-        vertical-align: middle //gr
-        font-weight: 400
-        font-style: normal
+        display: none
+
+.navbar-form
+    padding:  (($navbar-height - $line-height-computed) / 2) 0
+    margin: 0
+    width: 175px
+
+.btn
+    display: flex
+    align-items: center
+    border: 1px solid $black
+    font-size: 13px
+    font-family: $ffCir
 
 
-.FA-icon
-    font-family: $ffF-A
-    display: inline-block
-    font-weight: 400
-    font-style: normal
-    font-size: 18px
+.content__products .btn
+    padding: 0 40px
+    height: 30px
 
-.phone-icon
-    &:before
-        @extend .FA-icon
-        content: '\f095'
-        color: $grey
+.content-products-filter
+    display: flex
+    justify-content: space-between
 
-.mail-icon
-    &:before
-        @extend .FA-icon
-        content: '\f0e0'
-        color: $grey
-
-.profile-inner
-    padding: 20px
-    background-color: #000
-    width: 100%
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-
-
-.site-content-item
-    width: 100%
-    display: block
-    position: relative
-    margin-bottom: 25px
-    &:last-child
-        margin-bottom: 0
-    &.rhomb-marker:before
-        background-color: #fff
-
-.site-content__sub-item
-    width: 100%
-    display: block
-    position: relative
-    margin-bottom: 15px
-    color: $grey
-    font-weight: 700
-    &:last-child
-        margin-bottom: 0
-    &.rhomb-marker:before
-        background-color: $grey
-
-.site-content__sub-menu
-    padding-left: 15px
-
-.cell-5
-    width: 50%
-
-.site-content-wrapper
-    +fluid-columns(2, 30px, 0)
+.right-grey-line
+    border-right: 1px solid $grey
 
 .grid-gallery
-    & > .masonry-item
-        display: none
-        margin: 5px
-        float: left
-        overflow: hidden
-        height: 350px
-        &.row-1
-            width: 270px
-        &.row-2
-            width: 550px
-        &.row-7
-            width: 550px
-        &.col-2
-            height: 470px
-        &.col-1
-            height: 230px
-        &.active
-            display: block
 
-.blog
     & > .masonry-item
         display: block
-        margin: 5px
         float: left
+        $indent: 20px * 2
+        margin: 20px
         overflow: hidden
-        background: #fff
-        width: calc(33.3% - (1 - 1/3)*30px)
-
-.blog-item__footer
-    display: block
-    padding: 30px
-    background-color: #000
-
-.blog-container
-    max-width: 0
-    padding: 80px
-
-
-.fa-clock-o
-    @extend .icon
-    &:before
-        content: '\f017'
+        height: 380px
+        background-color: yellow
+        &.row-1
+            width: calc(33.3% - #{$indent})
+        &.row-2
+            width: calc(33.3% * 2 - (#{$indent}))
+        &.col-2
+            height: calc(760px - (#{$indent}))
+        &.col-1
+            height: calc(380px - #{$indent})

@@ -1,9 +1,6 @@
 <!-- build:js js/vendor.js -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
-{#
-<script src="bower_components/masonry/masonry.js"></script>
-#}
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
 <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 {#<script src="js/input.mask.js"></script>#}
 <!-- endbuild -->
@@ -11,35 +8,4 @@
 <!-- build:js js/common.js -->
 <script src="js/custom.js"></script>
 <!-- endbuild -->
-<script>
-    $(document).ready(function () {
-        $(".testimonials-quoters").owlCarousel({
-            items: 3,
-            loop: true,
-            nav: true,
-            dots: false,
-//            mouseDrag: true,
-            autoHeight: true
-            /*responsive: {
-             0: {
-             items: 1
-             }
-             }*/
-        });
-    });
-    $(document).ready(function () {
-        $(".first-screen-slider").owlCarousel({
-            items: 1,
-            loop: true,
-            dots: false,
-            nav: true,
-            mouseDrag: true,
-            responsive: {
-             0: {
-             items: 1
-             }
-             }
-        });
-    });
 
-</script>
