@@ -22,9 +22,19 @@
         });*/
         $('#masonry-container').masonry({
             isAnimated: true,
+            columnWidth: '.grid-sizer',
             itemSelector: '.masonry-item',
-            columnWidth: 20
+            percentPosition: true,
+            resize: true,
+            refreshOnResize: true
         });
+
+        $(window).resize(function(){
+            $('.col-1.row-1').height($('.col-1.row-1').width() / 1);
+            $('.col-2.row-1').height($('.col-2.row-1').width() * 2 + 20);
+            $('.col-1.row-2').height($('.col-1.row-1').width() / 1);
+        });
+
     });
 })();
 

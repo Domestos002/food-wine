@@ -11,7 +11,7 @@ $lightergrey: #f0f0f0
 $black: #060106
 $lighterblack: #111111
 
-//_________________________________________________________________________.
+//_________________________________________________________________________
 $fz-small: 13px
 $fz-big: 17px
 $fz-large: 20px //eo
@@ -56,12 +56,12 @@ $brand-danger:          #d9534f
 //** Background color for `<body>`.
 $body-bg:               #fff
 //** Global text color on `<body>`.
-$text-color:            $gray-dark
+$text-color:            $black
 
 //** Global textual link color.
 $link-color:            $brand-primary
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%)
+$link-hover-color:      $orange
 //** Link hover decoration.
 $link-hover-decoration: underline
 
@@ -76,12 +76,12 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
 $font-family-base:        $font-family-sans-serif
 
-$font-size-base:          14px
+$font-size-base:          17px
 $font-size-large:         ceil(($font-size-base * 1.25))  // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85))  // ~12px
 
 $font-size-h1:            floor(($font-size-base * 2.6))  // ~36px
-$font-size-h2:            floor(($font-size-base * 2.15))  // ~30px
+$font-size-h2:            43px  // ~30px
 $font-size-h3:            ceil(($font-size-base * 1.7))  // ~24px
 $font-size-h4:            ceil(($font-size-base * 1.25))  // ~18px
 $font-size-h5:            $font-size-base
@@ -134,12 +134,12 @@ $padding-xs-horizontal:     5px
 $line-height-large:         1.3333333  // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5
 
-$border-radius-base:        4px
+$border-radius-base:        0
 $border-radius-large:       6px
 $border-radius-small:       3px
 
 //** Global color for active items (e.g., navs or dropdowns).
-$component-active-color:    #fff
+$component-active-color:    $orange
 //** Global background color for active items (e.g., navs or dropdowns).
 $component-active-bg:       $brand-primary
 
@@ -245,7 +245,7 @@ $input-height-large:             (ceil($font-size-large * $line-height-large) + 
 $input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2)
 
 //** `.form-group` margin
-$form-group-margin-bottom:       15px
+$form-group-margin-bottom:       0
 
 $legend-color:                   $gray-dark
 $legend-border-color:            #e5e5e5
@@ -266,7 +266,7 @@ $cursor-disabled:                not-allowed
 //** Background for the dropdown menu.
 $dropdown-bg:                    #fff
 //** Dropdown menu `border-color`.
-$dropdown-border:                rgba(0,0,0,.15)
+$dropdown-border:                1px solid #e2e2e2
 //** Dropdown menu `border-color` **for IE8**.
 $dropdown-fallback-border:       #ccc
 //** Divider color for between dropdown items.
@@ -396,13 +396,13 @@ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
 $navbar-collapse-max-height:       340px
 
-$navbar-default-color:             #777
+$navbar-default-color:             #000
 $navbar-default-bg:                #f8f8f8
 $navbar-default-border:            darken($navbar-default-bg, 6.5%)
 
 // Navbar links
-$navbar-default-link-color:                #777
-$navbar-default-link-hover-color:          #333
+$navbar-default-link-color:                #000
+$navbar-default-link-hover-color:          $orange
 $navbar-default-link-hover-bg:             transparent
 $navbar-default-link-active-color:         #555
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%)
@@ -842,7 +842,7 @@ $carousel-control-width:                      15%
 $carousel-control-opacity:                    .5
 $carousel-control-font-size:                  20px
 
-$carousel-indicator-active-bg:                #fff
+$carousel-indicator-active-bg:                $orange
 $carousel-indicator-border-color:             #fff
 
 $carousel-caption-color:                      #fff

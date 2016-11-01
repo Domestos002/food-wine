@@ -1,29 +1,79 @@
 {% extends "layouts/main.twig" %}
 {% block pageContent %}
     <div class="content">
+        <div id="myCarousel" class="carousel slide p-rel" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="http://placehold.it/2000x440">
+                </div>
+
+                <div class="item">
+                    <img src="http://placehold.it/2000x440">
+                </div>
+
+                <div class="item">
+                    <img src="http://placehold.it/2000x440">
+                </div>
+
+                <div class="item">
+                    <img src="http://placehold.it/2000x440">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control fl-center" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control fl-center" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <div class="carousel-inform">
+                <h2 class="ttu">Моя история</h2>
+                <p class="base-title-label lh28">Каждый из нас — уникальный, ни на кого не похожий мир.</p>
+                <p class="base-title-label lh28 mb30 ">Создайте неповторимое украшение и расскажите о себе.</p>
+                <div class="tal"><a href="#" class=" dib white_btn base-title-label fz-small ttu black tac">Перейти к
+                        коллекции</a></div>
+            </div>
+        </div><!-- /.carousel -->
         <div class="content__products">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 right-grey-line">
-                        <ul class="content-products-filter">
+                    <div class="col-lg-4 ">
+                        <ul class="content-products-filter right-grey-line">
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-base  orange-on-hover  grey tdu">Я
+                                    ИЩУ:</a>
                             </li>
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-large black orange-on-hover tdu">egrgre</a>
                             </li>
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-large black orange-on-hover tdu">egrgre</a>
                             </li>
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-large black orange-on-hover tdu">egrgre</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-lg-8">
                         <ul class="content-products-filter">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                <a href="#" class="dropdown-toggle base-title-label lh41 fz-large black orange-on-hover"
+                                   data-toggle="dropdown" role="button"
                                    aria-expanded="false">Dropdown <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Action</a></li>
@@ -36,7 +86,8 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                <a href="#" class="dropdown-toggle base-title-label lh41 fz-large black orange-on-hover"
+                                   data-toggle="dropdown" role="button"
                                    aria-expanded="false">Dropdown <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Action</a></li>
@@ -49,42 +100,72 @@
                                 </ul>
                             </li>
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-large black orange-on-hover tdu ">egrgre</a>
                             </li>
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-large black orange-on-hover tdu">egrgre</a>
                             </li>
                             <li class="content-product-filter__item">
-                                <a href="" class="content-product-filter__link base-title-label">egrgre</a>
+                                <a href=""
+                                   class="content-product-filter__link base-title-label lh41 fz-large black orange-on-hover tdu">egrgre</a>
                             </li>
-                            <li><a href="#" class="btn">подобрать из 32 540</a></li>
+                            <li><a href="#" class="btn base-title-label fz-small ttu black">подобрать из 32 540</a></li>
                         </ul>
                     </div>
                 </div>
-
             </div>
             <div class="content__products masonry">
                 <div class="container">
-                    <div class="clearfix p-rel centered grid-gallery" id="masonry-container">
-                        <div class="masonry-item col-1 row-1">
+                    <div class="masonry-shell">
+                        <div class="clearfix p-rel centered grid-gallery" id="masonry-container">
+                            <div class="masonry-item col-1 row-1">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item-content-inner bottom-left"><p
+                                                class="base-title fz-big white ttu">KARATOV <br> Бесконечность</p>
+                                        <a href="#" class="white_btn base-title-label fz-small ttu black">ewggherhe</a>
+                                    </div>
 
-                        </div>
-                        <div class="masonry-item col-1 row-1">
-
-                        </div>
-                        <div class="masonry-item col-2 row-1">
-
-                        </div>
-                        <div class="masonry-item row-2 col-1 ">
-                        </div>
-                        <div class="masonry-item col-1 row-1">
-
-                        </div>
-                        <div class="masonry-item col-1 row-1">
-
-                        </div>
-                        <div class="masonry-item col-1 row-1">
-
+                                </div>
+                            </div>
+                            <div class="masonry-item col-1 row-1">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item__preview"></div>
+                                    <div class="masonry-item-content-inner"></div>
+                                </div>
+                            </div>
+                            <div class="grid-sizer"></div>
+                            <div class="masonry-item col-2 row-1">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item__preview"></div>
+                                    <div class="masonry-item-content-inner"></div>
+                                </div>
+                            </div>
+                            <div class="masonry-item row-2 col-1 ">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item__preview"></div>
+                                    <div class="masonry-item-content-inner"></div>
+                                </div>
+                            </div>
+                            <div class="masonry-item col-1 row-1">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item__preview"></div>
+                                    <div class="masonry-item-content-inner"></div>
+                                </div>
+                            </div>
+                            <div class="masonry-item col-1 row-1">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item__preview"></div>
+                                    <div class="masonry-item-content-inner"></div>
+                                </div>
+                            </div>
+                            <div class="masonry-item col-1 row-1">
+                                <div class="masonry-item-content">
+                                    <div class="masonry-item__preview"></div>
+                                    <div class="masonry-item-content-inner"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
