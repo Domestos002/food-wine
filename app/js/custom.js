@@ -29,11 +29,11 @@
             refreshOnResize: true
         });
 
-        $(window).resize(function(){
+        /*$(window).resize(function(){
             $('.col-1.row-1').height($('.col-1.row-1').width() / 1);
-            $('.col-2.row-1').height($('.col-2.row-1').width() * 2 + 20);
+            $('.col-2.row-1').height($('.col-1.row-1').height() * 2 + 20px);
             $('.col-1.row-2').height($('.col-1.row-1').width() / 1);
-        });
+        });*/
 
     });
 })();

@@ -8,6 +8,11 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans')
 //_____________________________________________________________________________
 
+.MyContainer
+    padding: 0 15px
+    max-width: 1230px
+    margin: 0 auto
+
 a
     text-decoration: none
 
@@ -18,16 +23,20 @@ body
     color: $black
 
 input
+    padding: 15px
     width: 100%
     -webkit-box-sizing: border-box
     -moz-box-sizing: border-box
     box-sizing: border-box
 
 *:not(.tdu)
-    text-decoration: none
+    text-decoration: none !important
 
 *:not(*[class*="mb"])
     margin-bottom: 0
+
+*:not(*[class*="mt"])
+    margin-top: 0
 
 
 .icon-fl
@@ -39,7 +48,6 @@ input
     line-height: 1em
     speak: none
     display: inline-block
-    width: 1em
 
 .icon
     display: inline-block
@@ -112,14 +120,23 @@ input
         font-family: $ffCir-b
     &.grey
         color: #747474
+    &.grey-v1
+        color: #a7a9ac
     &.lightgrey
         color: #a5a5a5
     &.black
         color: #000
+    &.black-v1
+        color: #111111
     &.fz-base
         font-size: 15px
     &.fz-small
         font-size: 13px
+    &.fz-12
+        font-size: 12px
+
+    &.fz-16
+        font-size: 16px
     &.fz-large
         font-size: 17px
     &.lh23
@@ -132,6 +149,7 @@ input
         line-height: 40px
     &.lh28
         line-height: 28px
+
     &.lh36
         line-height: 36px
 
@@ -155,6 +173,14 @@ input
         font-size: 31px
     &.fz-large
         font-size: 43px
+    &.fz-28
+        font-size: 28px
+    &.fz-12
+        font-size: 12px
+    &.fz-19
+        font-size: 19px
+    &.fz-20
+        font-size: 20px
     &.reg
         font-family: $ffCir
     &.light
@@ -169,10 +195,14 @@ input
         line-height: 49px
     &.lh40
         line-height: 40px
+    &.lh0
+        line-height: 0
     &.lh28
         line-height: 28px
     &.lh36
         line-height: 36px
+    &.lh22
+        line-height: 22px
 
 //______________________________________ENDtext_____________________________________
 
@@ -226,7 +256,7 @@ header .nav
 
 
 .content__products .btn
-    padding: 0 40px
+    padding: 0 30px
     line-height: 45px
 
 .content-products-filter
@@ -234,57 +264,62 @@ header .nav
     justify-content: space-between
 
 .grid-gallery
-    margin-right: -1%
-    margin-left: -1%
+    margin-right: -2%
     & > .masonry-item
-        padding-left: 1%
-        padding-right: 1%
         display: block
+        position: relative
         float: left
         overflow: hidden
-        height: 380px
-        margin-bottom: 2%
+        margin-bottom: 2% //grrthy
         &.row-1
-            width: calc(33.333%)
+            width: calc(33.333% - 2%)
         &.row-2
-            width: calc(33.333% * 2)
-        &.col-2
-            height: calc(783px)
-        &.col-1
-            height: 380px
-        & > .masonry-item-content
-            position: relative
-            display: block
-            +size(100%, 100%)
+            width: calc(33.333% * 2 - 2%)
+        &.col-1.row-1
+            .masonry-item-size
+                margin-top: 100%
+        &.col-2.row-1
+            .masonry-item-size
+                margin-top: 209.4%
+        &.col-1.row-2
+            .masonry-item-size
+                margin-top: 50%
+        & .masonry-item-content
+            +position(absolute, 0 0 0 0)
             background-color: #ccc
+            +size(100%, 100%)
+            overflow: hidden
             & .masonry-item-content-inner
-                position: absolute
                 &.bottom-left
-                    margin-bottom: 40px
-                    margin-left: 40px
-                    +position(absolute, 60% 0 0 0%)
+                    +position(absolute, none 40px 45px 40px)
                 &.top-right
-                    +position(absolute, 100% 0 0 20%)
+                    +position(absolute, 20% 40px 0 40%)
+                &.middle
+                    +position(absolute, 20px 20px 20px 20px)
+                    background-color: #fff
+                    padding: 40px 30px 20px
+                &.bottom
+                    +position(absolute, none 40px 45px 40px)
                 &.bottom-right
                     +position(absolute, 100% 0 0 20%)
                 &.top-left
-                    +position(absolute, 100% 0 0 20%)
+                    +position(absolute, 40px 40px 0 40px)
 
 .grid-sizer
     width: 33.333%
 
+.masonry-item-content__b-white-circle
+    +position(absolute, 15% 15% 15% 15%)
+    background-color: #fff
+    border-radius: 50%
+
+.masonry-item-content__b-white
+    +size(100%, 255px)
+    background-color: #fff
+    padding: 55px 38px
+
 .masonry-item-content
     position: relative
-
-
-.dropdown-toggle
-    &:hover
-        text-decoration: none //w4tgfgf
-
-.dropdown.open
-    .dropdown-toggle
-        &:hover
-            text-decoration: none
 
 
 //.masonry-shell
@@ -292,15 +327,19 @@ header .nav
     margin-right: -20px
 
 .carousel-indicators
-    +transform(translateX(-50%))
+    left: 45%
 
-.carousel-inform
-    +position(absolute, 0 none none 15%)
-    margin-top: 5%
+#mainCarousel .item
+    background-image: url("http://placehold.it/2000x450")
+    background-repeat: no-repeat
+    -webkit-background-size: cover
+    background-size: cover
+    background-position: center center
     //+transform(translateY(-100%))gr
 
 .carousel-inner
     max-height: 440px
+    padding-bottom: 20px
 
 .carousel-chevron-left
     +arr(20px, 2px, l, #a7a9ac)
@@ -321,6 +360,22 @@ header .nav
     max-width: 220px
     padding: 15px 30px
 
+.orange_btn
+    @extend .btn
+    display: inline-block
+    background-color: $orange
+    color: #fff
+    border: none
+    max-width: 220px
+    padding: 15px 30px
+    &:hover
+        color: white
+        background-color: $orange * 0.8
+
+.ornamentations .orange_btn
+    max-width: 185px
+    padding: 0 50px
+
 .carousel-inform
     & .white_btn
         max-width: 220px
@@ -340,11 +395,181 @@ header .nav
             display: inline-block
             content: ''
 
-
-.item
-    & > img
-        width: 100%
-
-
 .masonry-item
     position: relative
+
+.branch-icon
+    +sprite(branch)
+    display: inline-block
+
+
+.marker-icon
+    +sprite(marker)
+    display: inline-block
+
+.carousel-inner > .item
+    min-height: 450px
+
+.carousel__item__content
+    min-height: 450px
+    display: flex
+    align-items: center
+    max-width: 70%
+    margin: 0 auto
+
+.dropdown-caret
+    margin-left: 9px
+    +arr(8px, 2px, b, #c8c5c4)
+    display: inline-block
+    vertical-align: middle
+    margin-bottom: 5px
+
+
+.dropdown-toggle
+    &:hover
+        text-decoration: none //w4tgfgf
+
+.dropdown
+    &:hover
+        & .dropdown-caret
+            +arr(8px, 2px, b, $orange)
+    &.open
+        & .dropdown-toggle
+            color: $orange
+        & .dropdown-caret
+            +arr(8px, 2px, b, $orange)
+        .dropdown-toggle
+            &:hover
+                text-decoration: none
+
+
+
+.diamond-icon
+    +sprite(diamond)
+    display: inline-block
+
+.icon-wrapper
+    height: 30px
+    width: 30px
+
+.hit-circle
+    +size(30px, 30px)
+    border-radius: 50%
+    border: 1px solid #e5ded9
+    vertical-align: middle
+    font-size: 9px
+    text-transform: uppercase
+    color: #b18b78
+
+
+.ok-icon
+    @extend .icon-fl
+    position: relative
+    &:before
+        +position(absolute, -6px 0 0 -6px )
+        +sprite(shape)
+        content: ''
+        display: inline-block
+
+.ornamentaitions-popup
+    visibility: hidden
+    +position(absolute, none none none 0)
+    z-index: 20
+    +trans()
+    width: 100%
+
+.ornamentations-item
+    position: relative
+    background-image: none
+    -webkit-background-size: cover
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    background-color: #fff
+    margin: 0 auto
+    width: 250px
+    padding: 20px 20px 0 20px
+    padding-bottom: 123px
+
+    &:hover
+        +trans()
+        & .ornamentaitions-popup
+            visibility: visible
+            +trans()
+        @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.24))
+    & .ornamentations-photo-wrapper
+        +size(100%, auto)
+        overflow: hidden
+        margin: 0 auto
+
+.rub
+    &:after
+        content: '\F158'
+        display: inline-block
+        margin-left: 5px
+        @extend .icon-fl
+        font-size: 14px
+
+.ornamentations
+    & .fl-icon-heard-empty //htr
+        font-size: 18px
+
+.content__bottom-inform
+    padding: 70px 0
+    border-top: 1px solid #e0e1e1
+
+
+.content__bottom-form
+    z-index: 1
+    & .img
+        +position(absolute, 0 none none 15px)
+        z-index: -1
+    padding: 30px 0
+    background: linear-gradient(to right, #f3eee8, #f0eae5)
+    & .shell
+        height: 42px
+    & .input-wrapper
+        width: 250px
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        height: 100%
+        & > input
+            height: 100%
+
+    & .btn
+        height: 100%
+        width: 170px
+        padding: 13px
+
+footer
+    padding: 60px 50px
+    background-color: #fff
+    & .icon-fl
+        font-size: 20px
+        color: #b2b2b2
+    & .design
+        +position(absolute, none 0 -40px none)
+    & .circle-icon-wrapper
+        border-color: #b2b2b2
+        +size(40px, 40px)
+        flex-basis: 40px
+        &:hover
+            +trans()
+            border-color: $orange
+            & .icon-fl
+                +trans()
+                color: $orange
+
+.footer-links__item
+    & > a
+        margin-bottom: 5px
+        line-height: normal
+        &:last-child
+            margin-bottom: 0
+
+.footer__links
+    align-items: stretch
+
+.heard_btn
+    height: 45px
