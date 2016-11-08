@@ -11,6 +11,9 @@
     "bourbon": "^4.2.7",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
-    "masonry": "^4.1.1"
+    "masonry": "^4.1.1",
+    "flexslider-compass": "*",
+    "owlcarousel": "owl-carousel#^1.3.2",
+    "jquery-form-styler": "jquery.formstyler#^1.7.6"
   }
 }

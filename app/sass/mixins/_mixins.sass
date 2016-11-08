@@ -7,8 +7,6 @@
         @content
     &::-webkit-input-placeholder
         @content
-    &::placeholder
-        @content
 
 =trans($property:all,$duration:0.5s,$effect:ease,$delay:0s)
     -webkit-transition: $property $duration $effect $delay
@@ -104,3 +102,24 @@
         border: transparent
         border-bottom: $border-size solid $color
         border-left: $border-size solid $color
+
+
+=box
+    +box-sizing(border-box)
+
+=font($alias, $name)
+    @font-face
+        font-family: $alias
+        src: url("fonts/" + $name + ".eot")
+        src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype")
+        font-weight: normal
+        font-style: normal
+
+
+=prevent-text
+    -ms-word-break: break-all
+    word-break: break-all
+    word-break: break-word
+    -webkit-hyphens: auto
+    -moz-hyphens: auto
+    hyphens: auto

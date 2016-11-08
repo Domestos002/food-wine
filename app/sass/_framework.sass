@@ -12,9 +12,6 @@
 .db
     display: block
 
-.hidden
-    display: none
-
 .ovh
     overflow: hidden
 
@@ -53,6 +50,10 @@
     display: flex
     align-items: center
 
+.fl-items-top
+    display: flex
+    align-items: flex-start
+
 .fl-sp-b
     display: flex
     justify-content: space-between
@@ -88,14 +89,22 @@
 .white
     color: #fff
 
-.fz-bold
+.text-bold
     font-weight: 400
 
-.fz18
-    font-size: 18px
+.fz25
+    font-size: 25px
 
 .orange
     color: $orange
+
+
+.prevent-text
+    +prevent-text()
+
+
+.tar
+    text-align: right
 //______________________________________ENDТекста и цвета____________________
 
 .mb15
@@ -118,7 +127,8 @@
 
 .mb60
     margin-bottom: 60px
-
+.mb2
+    margin-bottom: 2px
 .mb25
     margin-bottom: 25px
 

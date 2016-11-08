@@ -1,7 +1,7 @@
 <header>
-    <div class="header-advantages-circles-list fl-sp-b">
-        <div class="MyContainer">
-            <div class="row">
+    <div class="header-advantages-circles-list ">
+        <div class="MyContainer ">
+            <div class="row fl-sp-b">
                 <div class="col-lg-3 col-xs-3  fl-row fl-start">
                     <div class="circle-icon-wrapper mr15 fl-center ">
                         <i class="icon-building"></i>
@@ -38,19 +38,33 @@
         <div class="MyContainer">
             <div class="row fl-items-center">
                 <div class="col-xs-5">
-                    <div class="row"><div class="col-lg-6">
+                    <div class="row fl-items-center">
+                        <div class="col-lg-6">
                             <div class="header-info__contacts">
-                                <a href="tel:88007757715" class="base-title fz-small fz26 lh41 tac">8-800-775-77-15</a>
-                                <p class="base-title-label fz-base lh23">бесплатно по России</p>
+                                <div class="header-info__contacts__hat">
+                                    <a href="tel:88007757715" class="base-title fz-small tdu fz26 lh0 tac">8-800-775-77-15</a>
+                                    <p class="base-title-label fz-base lh23">бесплатно по России</p>
+                                </div>
+                                <div class="header-info__contacts__popup">
+                                    <div class="header-info__contacts__popup-info mb20">
+                                        <p class="base-title-label reg black mb20 lh23">
+                                            Заказ по телефону: <br>
+                                            <span class="base-title-label grey">круглосуточно, 24/7</span>
+                                        </p>
+                                        <p class="base-title-label reg black lh23">
+                                            Обработка заказов: <br>
+                                            <span class="base-title-label grey">ежедневно, 09:00 — 21:00</span>
+                                        </p>
+                                    </div>
+                                    <a href="#" class="btn base-title-label dib  fz-small ttu black ml10 ">обратный
+                                        звонок</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <p class="base-title-label fz-base lh23">Москва и м.о.</p>
-                                    <span class="caret"></span>
-                                </button>
+                                <p class="base-title-label cur-p dropdown-toggle fz-base dib vam lh23">
+                                    Москва и м.о.<span class="dropdown-caret dib vam"></span></p>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li><a href="#">Action</a></li>
                                     <li><a href="#">Another action</a></li>
@@ -59,7 +73,8 @@
                                     <li><a href="#">Separated link</a></li>
                                 </ul>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-xs-2">
@@ -70,13 +85,42 @@
                 <div class="col-xs-5 clearfix">
                     <div class="pull-right">
                         <div class="header_login-form fl-row fl-center">
-                            <div class="login-form-item fl-baseline mr40">
-                                <span class="icon-fl fl-icon-person mr10">&#xe802</span>
-                                <p class="base-title-label fz-base lh23">Вдох</p>
-                            </div>
+                            <a class="login-form-item fl-baseline orange-on-hover mr40">
+                                <span class="icon-fl mr10 black ">&#xe807</span>
+                                <p class="base-title-label fz-base lh23 ">Вход</p>
+                            </a>
                             <div class="login-form-item fl-baseline">
-                                <span class="icon-fl fl-icon-heard-empty mr10">&#xe803</span>
-                                <p class="base-title-label fz-base lh23">Сохранено</p>
+                                <div class="popup-trigger">
+                                    <p class="base-title-label popup-trigger fz-large lh23 orange-on-hover ">
+                                        <span class="icon-fl fl-icon-heard-empty mr10 fz25 p-rel orange-on-hover">&#xe803<i class="counter">3</i></span> Сохранено</p>
+                                    <div class="header_login-form__popup">
+                                        <div class="header_login-form__popup-item ">
+                                            <div class="header_login-form__popup-item__photo dib">
+                                                <img src="http://placehold.it/45x45" alt="">
+                                            </div>
+                                            <div class="popup-item__price dib"><p class="base-title prevent-text text-bold fz-15 rub">55 000</p>
+                                            <p class="base-title-label fz-12 prevent-text td-th">18000</p>
+                                            </div>
+                                            <div class="dib tar"><i class="icon-close"></i></div>
+                                        </div>
+                                        <div class="header_login-form__popup-item ">
+                                            <div class="header_login-form__popup-item__photo dib">
+                                                <img src="http://placehold.it/45x45" alt="">
+                                            </div>
+                                            <div class="popup-item__price dib"><p class="base-title prevent-text text-bold fz-15 rub">55 000</p>
+                                            <p class="base-title-label fz-12 prevent-text td-th">18000</p></div>
+                                            <div class="dib tar"><i class="icon-close"></i></div>
+                                        </div>
+                                        <div class="header_login-form__popup-item ">
+                                            <div class="header_login-form__popup-item__photo dib">
+                                                <img src="http://placehold.it/45x45" alt="">
+                                            </div>
+                                           <div class="popup-item__price dib"> <p class="base-title prevent-text text-bold fz-15 rub">55 000</p>
+                                            <p class="base-title-label fz-12 prevent-text td-th">18000</p></div>
+                                            <div class="dib tar"><i class="icon-close"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -94,9 +138,9 @@
                 <li><a class="base-title" href="#">где купить</a></li>
             </ul>
             <div class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" class="form-control">
-                </div>
+                <form class="form-group">
+                    <div class="input-wrapper search-icon"><input type="text" class="form-control "></div>
+                </form>
             </div>
         </div>
     </nav>
